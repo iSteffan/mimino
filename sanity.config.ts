@@ -1,15 +1,16 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 import schemas from './sanity/schemas';
+import { projectId, dataset, apiVersion } from '@/sanity/env';
 
 export default defineConfig({
   name: 'default',
   title: 'Mimino',
 
-  projectId: 'h84a8gc8',
-  dataset: 'production',
+  projectId,
+  dataset,
+  apiVersion,
 
-  apiVersion: '2024-05-16',
   basePath: '/admin',
 
   plugins: [structureTool()],

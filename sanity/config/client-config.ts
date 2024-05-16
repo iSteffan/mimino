@@ -1,7 +1,9 @@
+import { projectId, dataset, apiVersion } from '../env';
+
 const config = {
-  projectId: 'h84a8gc8',
-  dataset: 'production',
-  apiVersion: '2024-05-16',
+  projectId,
+  dataset,
+  apiVersion,
   useCdn: false,
 };
 
