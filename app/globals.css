@@ -2,32 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .heroTitleMimino {
+    @apply font-film text-[96px] font-700 leading-normal tracking-[28.8px] md:text-[128px] md:tracking-[38.4px];
+  }
+  .sectionTitleMimino {
+    @apply font-film text-[40px] font-700 leading-normal tracking-[12px] md:text-[64px] md:tracking-[19.2px];
+  }
+  .btnText {
+    @apply font-mont text-[16px] text-accentYellow01 font-700 leading-normal tracking-[0.32px];
+  }
+  .text {
+    @apply font-mont text-[12px] font-600 leading-normal tracking-[0.34px] md:text-[16px] md:tracking-[0.32px];
   }
 }
