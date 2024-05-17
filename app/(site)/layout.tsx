@@ -5,6 +5,9 @@ import classNames from 'classnames';
 import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
 
+import { Header } from '@/layout/Header';
+import { Footer } from '@/layout/Footer';
+
 import '../globals.css';
 
 const montserrat = Montserrat({
@@ -17,12 +20,12 @@ const montserrat = Montserrat({
 const timesNewRoman = localFont({
   src: [
     {
-      path: '../../public/font/times-new-roman-bold.ttf',
+      path: '../../public/fonts/times-new-roman-bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../public/font/times-new-roman.ttf',
+      path: '../../public/fonts/times-new-roman.ttf',
       weight: '400',
       style: 'normal',
     },
@@ -34,7 +37,7 @@ const timesNewRoman = localFont({
 const filmP3 = localFont({
   src: [
     {
-      path: '../../public/font/filmp3-bold.ttf',
+      path: '../../public/fonts/filmp3-bold.ttf',
       weight: '700',
       style: 'normal',
     },
@@ -63,7 +66,9 @@ export default function RootLayout({
           'flex h-full min-h-screen flex-col bg-white'
         )}
       >
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
