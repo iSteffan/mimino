@@ -1,0 +1,7 @@
+{
+  "logo": "MIMIHO",
+  "headerLink": [
+    { "text": "Ресторан", "href": "restaurant", "phone": "095 555 95 33" },
+    { "text": "Готель", "href": "hotel", "phone": ["066 849 10 89", "067 275 85 40"] }
+  ]
+}
