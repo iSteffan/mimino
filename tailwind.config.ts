@@ -49,6 +49,8 @@ const config: Config = {
         adressHero: '#E5E5E5',
         textMiminoDark: '#494848',
         // text04: '#7A7A7A',
+
+        footerBg: '#0E0C07',
       },
     },
   },

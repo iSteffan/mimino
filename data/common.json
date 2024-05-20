@@ -3,5 +3,15 @@
   "headerLink": [
     { "text": "Ресторан", "href": "restaurant", "phone": "095 555 95 33" },
     { "text": "Готель", "href": "hotel", "phone": ["066 849 10 89", "067 275 85 40"] }
+  ],
+  "footerNav": [
+    { "text": "Головна", "href": "" },
+    { "text": "Ресторан", "href": "restaurant" },
+    { "text": "Готель", "href": "hotel" }
+  ],
+  "socials": [
+    { "logo": "/icons/instagram.svg", "text": "Посилання на інстаграм" },
+    { "logo": "/icons/facebook.svg", "text": "Посилання на фейсбук" },
+    { "logo": "/icons/telegram.svg", "text": "Посилання на телеграм" }
   ]
 }

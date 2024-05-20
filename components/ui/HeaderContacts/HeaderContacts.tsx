@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ContactPhone } from '../ContactPhone';
+import { ContactPhone } from '../../common/ContactPhone';
 
 import data from '@/data/common.json';
 
