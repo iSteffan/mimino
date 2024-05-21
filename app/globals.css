@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer components {
   .heroTitleMimino {
     @apply font-film text-[96px] font-700 leading-normal tracking-[28.8px] md:text-[128px] md:tracking-[38.4px];
   }

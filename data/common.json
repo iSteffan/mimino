@@ -10,8 +10,8 @@
     { "text": "Готель", "href": "hotel" }
   ],
   "socials": [
-    { "logo": "/icons/instagram.svg", "text": "Посилання на інстаграм" },
-    { "logo": "/icons/facebook.svg", "text": "Посилання на фейсбук" },
-    { "logo": "/icons/telegram.svg", "text": "Посилання на телеграм" }
+    { "text": "Посилання на інстаграм", "name": "Instagram" },
+    { "text": "Посилання на фейсбук", "name": "Facebook" },
+    { "text": "Посилання на телеграм", "name": "Telegram" }
   ]
 }

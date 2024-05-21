@@ -1,1 +1,3 @@
-export interface ISocials {}
+export interface ISocials {
+  isFooter?: boolean;
+}
