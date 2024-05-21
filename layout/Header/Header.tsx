@@ -1,5 +1,6 @@
 import { HeaderContacts } from '@/components/ui/HeaderContacts';
 import { Logo } from '@/components/common/Logo';
+import { Socials } from '@/components/common/Socials';
 
 export const Header = () => {
   return (
@@ -7,6 +8,7 @@ export const Header = () => {
       <div className="container max-w-full flex bg-black items-center justify-between">
         <Logo isHeader />
         <HeaderContacts />
+        <Socials isHeader />
       </div>
     </header>
   );
