@@ -4,8 +4,8 @@ import { Socials } from '@/components/common/Socials';
 
 export const Header = () => {
   return (
-    <header className="pt-[16px] pb-[8px] md:py-[30px]">
-      <div className="container max-w-full flex bg-black items-center justify-between">
+    <header className="pt-[16px] pb-[8px] md:py-[30px] relative z-10 max-w-full">
+      <div className="container  flex items-center justify-between">
         <Logo isHeader />
         <HeaderContacts />
         <Socials isHeader />

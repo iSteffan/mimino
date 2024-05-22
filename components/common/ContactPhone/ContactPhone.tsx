@@ -11,7 +11,7 @@ export const ContactPhone = ({ data, className = '' }: IContactPhone) => {
   );
 
   return (
-    <div className="flex gap-[16px] items-center p-[8px] border-[1px] border-accentYellow01 border-solid rounded-[2px]">
+    <div className="flex gap-[16px] items-center p-[8px] border-around-yellow">
       <PhoneIcon className="w-[24px] h-[24px]" />
       {Array.isArray(data) ? (
         <>

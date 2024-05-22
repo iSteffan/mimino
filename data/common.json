@@ -1,5 +1,8 @@
 {
   "logo": "MIMIHO",
+  "heroText": ["Ресторанно-готельний комплекс", "Ресторан", "Готель"],
+  "tasteLife": "СМАК ЖИТТЯ 24/7",
+  "heroRepeatedText": "СМАК ЖИТТЯ 24/7",
   "headerLink": [
     { "text": "Ресторан", "href": "restaurant", "phone": "095 555 95 33" },
     { "text": "Готель", "href": "hotel", "phone": ["066 849 10 89", "067 275 85 40"] }
@@ -13,5 +16,18 @@
     { "text": "Посилання на інстаграм", "name": "Instagram" },
     { "text": "Посилання на фейсбук", "name": "Facebook" },
     { "text": "Посилання на телеграм", "name": "Telegram" }
+  ],
+  "address": "Україна, м. Полтава, вул. Маршала Бірюзова, 15",
+  "heroMainBtns": [
+    { "text": "Забронювати столик", "type": "btn" },
+    { "text": "Забронювати номер", "type": "btn" }
+  ],
+  "heroRestaurantBtns": [
+    { "text": "Забронювати столик", "type": "btn" },
+    { "text": "Переглянути меню", "type": "scroll" }
+  ],
+  "heroHotelBtns": [
+    { "text": "Забронювати номер", "type": "btn" },
+    { "text": "Переглянути ціни", "type": "btn" }
   ]
 }

@@ -1,3 +1,9 @@
+import { HeroSection } from '@/sections/CommonSections/HeroSection';
+
 export default function Page() {
-  return <div>hotel page</div>;
+  return (
+    <>
+      <HeroSection isHotel />
+    </>
+  );
 }

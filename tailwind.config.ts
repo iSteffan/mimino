@@ -48,9 +48,18 @@ const config: Config = {
 
         adressHero: '#E5E5E5',
         textMiminoDark: '#494848',
-        // text04: '#7A7A7A',
+
+        heroWhite: '#FDFBEC',
 
         footerBg: '#0E0C07',
+      },
+      backgroundImage: {
+        'hero-main':
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/mainHero.webp')",
+        'hero-restaurant':
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/restaurant/restaurantHero.webp')",
+        'hero-hotel':
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/hotel/hotelHero.webp')",
       },
     },
   },

@@ -19,18 +19,14 @@ export const Socials = ({ isFooter, isHeader }: ISocials) => {
   const listItemClassName = classNames(
     'text-accentYellow01 transition-colors hover:text-white focus:text-white',
     {
-      'md:py-[8px] md:px-[12px] md:rounded-[2px] md:border-accentYellow01 md:border-solid md:border-[0.5px] hover:border-white focus:border-white':
+      'md:py-[8px] md:px-[12px] md:border-around-yellow md:border-[0.5px] hover:border-white focus:border-white':
         isFooter,
-      // 'py-4 xl:py-6 px-6 mdOnly:px-4 md:w-[165px] xl:w-[323px]': isUniqueness,
     }
   );
 
-  const linkClassName = classNames(
-    // 'text-accentYellow01',
-    {
-      'md:flex md:gap-[17px]': isFooter,
-    }
-  );
+  const linkClassName = classNames({
+    'md:flex md:gap-[17px]': isFooter,
+  });
 
   return (
     <ul className={listClassName}>
