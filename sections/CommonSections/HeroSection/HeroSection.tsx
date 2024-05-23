@@ -47,7 +47,6 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   return (
     <section className={sectionStyles}>
       <div className="container relative">
-        {/* <ContactAddress isHero className="ml-auto" /> */}
         <h1 className="heroTitleMimino mt-[70px] mb-[24px]">{logo}</h1>
         <p className={descriptionStyles}>
           {isMain && heroMainDescription}

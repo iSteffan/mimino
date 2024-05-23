@@ -54,6 +54,7 @@ const config: Config = {
         heroWhite: '#FDFBEC',
 
         footerBg: '#0E0C07',
+        lemonBg: '#FFFDEE',
       },
       backgroundImage: {
         'hero-main':
