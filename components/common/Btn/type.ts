@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
+import React from 'react';
 
 export interface IBtn {
   type?: 'button' | 'submit';
   isBtn?: boolean;
   isLink?: boolean;
   isScroll?: boolean;
-  classname?: 'string';
-  children: ReactNode;
+  classname?: string;
+  children: React.ReactNode;
 }

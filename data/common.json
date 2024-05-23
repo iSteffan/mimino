@@ -18,16 +18,18 @@
     { "text": "Посилання на телеграм", "name": "Telegram" }
   ],
   "address": "Україна, м. Полтава, вул. Маршала Бірюзова, 15",
-  "heroMainBtns": [
-    { "text": "Забронювати столик", "type": "btn" },
-    { "text": "Забронювати номер", "type": "btn" }
-  ],
-  "heroRestaurantBtns": [
-    { "text": "Забронювати столик", "type": "btn" },
-    { "text": "Переглянути меню", "type": "scroll" }
-  ],
-  "heroHotelBtns": [
-    { "text": "Забронювати номер", "type": "btn" },
-    { "text": "Переглянути ціни", "type": "btn" }
-  ]
+  "heroBtn": {
+    "heroMainBtns": [
+      { "text": "Забронювати столик", "type": "btn", "btnType": "button" },
+      { "text": "Забронювати номер", "type": "btn", "btnType": "button" }
+    ],
+    "heroRestaurantBtns": [
+      { "text": "Забронювати столик", "type": "btn", "btnType": "button" },
+      { "text": "Переглянути меню", "type": "scroll", "btnType": "none" }
+    ],
+    "heroHotelBtns": [
+      { "text": "Забронювати номер", "type": "btn", "btnType": "button" },
+      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
+    ]
+  }
 }

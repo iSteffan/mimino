@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import classNames from 'classnames';
