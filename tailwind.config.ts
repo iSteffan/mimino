@@ -12,6 +12,8 @@ const config: Config = {
       sm: '480px',
       md: '1024px',
       xl: '1280px',
+
+      smOnly: { max: '1023.98px' },
     },
     extend: {
       container: {

@@ -10,7 +10,7 @@ export const BtnList = ({ BtnData, listClassname, btnClassname }: IBtnList) => {
   return (
     <ul className={listStyles}>
       {BtnData?.map(data => (
-        <li key={data.text}>
+        <li key={data.text} className="self-center">
           <Btn
             {...(data.type !== 'none' && { type: data.type as 'button' | 'submit' })}
             isBtn={data.type === 'btn'}

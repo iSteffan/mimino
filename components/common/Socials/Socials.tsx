@@ -8,13 +8,17 @@ import { ISocials } from './type';
 
 import data from '@/data/common.json';
 
-export const Socials = ({ isFooter, isHeader }: ISocials) => {
+export const Socials = ({ isFooter, isHeader, classname }: ISocials) => {
   const { socials } = data;
 
-  const listClassName = classNames('flex gap-[20px]', {
-    'md:flex-col md:gap-[12px]': isFooter,
-    'hidden xl:flex': isHeader,
-  });
+  const listClassName = classNames(
+    'flex gap-[20px]',
+    {
+      'md:flex-col md:gap-[12px]': isFooter,
+      'hidden xl:flex': isHeader,
+    },
+    classname
+  );
 
   const listItemClassName = classNames(
     'text-accentYellow01 transition-colors hover:text-white focus:text-white',
