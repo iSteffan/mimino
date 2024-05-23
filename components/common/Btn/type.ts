@@ -5,6 +5,6 @@ export interface IBtn {
   isBtn?: boolean;
   isLink?: boolean;
   isScroll?: boolean;
-  classname?: string;
+  classnameProps?: string;
   children: React.ReactNode;
 }

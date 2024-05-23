@@ -1,3 +1,3 @@
 export interface ISectionTitle {
-  classname?: string;
+  classnameProps?: string;
 }

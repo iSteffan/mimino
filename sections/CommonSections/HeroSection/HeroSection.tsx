@@ -61,11 +61,14 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
         <div className="flex justify-between mb-[58px]">
           <ContactAddress
             isHero
-            className="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"
+            classnameProps="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"
           />
-          <BtnList BtnData={BtnData} listClassname="md:flex-row md:gap-[40px] smOnly:mx-auto" />
+          <BtnList
+            BtnData={BtnData}
+            listClassnameProps="md:flex-row md:gap-[40px] smOnly:mx-auto"
+          />
         </div>
-        <Socials classname="xl:hidden" />
+        <Socials classnameProps="xl:hidden" />
       </div>
     </section>
   );

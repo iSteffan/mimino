@@ -8,7 +8,7 @@ import { ISocials } from './type';
 
 import data from '@/data/common.json';
 
-export const Socials = ({ isFooter, isHeader, classname }: ISocials) => {
+export const Socials = ({ isFooter, isHeader, classnameProps }: ISocials) => {
   const { socials } = data;
 
   const listClassName = classNames(
@@ -17,7 +17,7 @@ export const Socials = ({ isFooter, isHeader, classname }: ISocials) => {
       'md:flex-col md:gap-[12px]': isFooter,
       'hidden xl:flex': isHeader,
     },
-    classname
+    classnameProps
   );
 
   const listItemClassName = classNames(

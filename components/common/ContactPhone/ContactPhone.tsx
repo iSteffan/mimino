@@ -4,10 +4,10 @@ import PhoneIcon from '@/public/icons/phone.svg';
 
 import { IContactPhone } from './type';
 
-export const ContactPhone = ({ data, className = '' }: IContactPhone) => {
+export const ContactPhone = ({ data, classnameProps = '' }: IContactPhone) => {
   const contactPhoneStyles = classNames(
     'font-mont text-[14px] leading-normal tracking-[0.28px] font-400 text-white hover:text-accentYellow01 focus:text-accentYellow01 transition-colors',
-    className
+    classnameProps
   );
 
   return (

@@ -6,7 +6,7 @@ import data from '@/data/common.json';
 
 import { IContactAdress } from './type';
 
-export const ContactAddress = ({ isContactSection, isHero, className }: IContactAdress) => {
+export const ContactAddress = ({ isContactSection, isHero, classnameProps }: IContactAdress) => {
   const { address } = data;
 
   const addressStyles = classNames(
@@ -15,7 +15,7 @@ export const ContactAddress = ({ isContactSection, isHero, className }: IContact
       'pr-[10px] pl-[33px] w-full': isContactSection,
       'px-[6px] w-[210px]': isHero,
     },
-    className
+    classnameProps
   );
 
   return (
