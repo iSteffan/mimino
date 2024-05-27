@@ -28,7 +28,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   }
 
   const sectionStyles = classNames(
-    'bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px]',
+    'bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px] md:pt-[100px] xl:pb-[64px]',
     {
       'bg-hero-main': isMain,
       'bg-hero-restaurant': isRestaurant,
@@ -54,11 +54,14 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
           {isHotel && heroHotelDescription}
         </p>
         {(isMain || isRestaurant) && (
-          <p className="mb-[101px] font-times text-heroWhite text-[32px] font-700 leading-normal tracking-[1.6px] text-center">
+          <p
+            className="mb-[101px] font-times text-heroWhite text-[32px] font-700 leading-normal tracking-[1.6px] text-center 
+          md:text-[32px] md:tracking-[1.8px]"
+          >
             {tasteLife}
           </p>
         )}
-        <div className="flex justify-between mb-[58px]">
+        <div className="flex justify-between mb-[58px] md:mb-[25px] xl:mb-0">
           <ContactAddress
             isHero
             classnameProps="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"

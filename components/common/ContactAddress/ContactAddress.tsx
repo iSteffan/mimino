@@ -6,7 +6,11 @@ import data from '@/data/common.json';
 
 import { IContactAdress } from './type';
 
-export const ContactAddress = ({ isContactSection, isHero, classnameProps }: IContactAdress) => {
+export const ContactAddress = ({
+  isContactSection,
+  isHero,
+  classnameProps = '',
+}: IContactAdress) => {
   const { address } = data;
 
   const addressStyles = classNames(

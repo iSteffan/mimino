@@ -8,7 +8,7 @@ import { ISocials } from './type';
 
 import data from '@/data/common.json';
 
-export const Socials = ({ isFooter, isHeader, classnameProps }: ISocials) => {
+export const Socials = ({ isFooter, isHeader, classnameProps = '' }: ISocials) => {
   const { socials } = data;
 
   const listClassName = classNames(

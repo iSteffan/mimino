@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 import { IBtn } from './type';
 
-export const Btn = ({ type, classnameProps, children, isBtn, isLink, isScroll }: IBtn) => {
+export const Btn = ({ type, classnameProps = '', children, isBtn, isLink, isScroll }: IBtn) => {
   const btnStyles = classNames(
     'block border-around-white py-[15px] w-[236px] font-mont text-center text-accentYellow01 text-[16px] leading-normal tracking-[0.32px] font-700 hover:bg-white focus:bg-white hover:border-accentYellow01 focus:border-accentYellow01 transition-colors',
     classnameProps

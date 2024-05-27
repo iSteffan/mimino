@@ -4,7 +4,7 @@ import { Btn } from '@/components/common/Btn';
 
 import { IBtnList } from './type';
 
-export const BtnList = ({ BtnData, listClassnameProps, btnClassnameProps }: IBtnList) => {
+export const BtnList = ({ BtnData, listClassnameProps = '', btnClassnameProps = '' }: IBtnList) => {
   const listStyles = classNames('flex flex-col gap-[24px]', listClassnameProps);
 
   return (
@@ -16,7 +16,7 @@ export const BtnList = ({ BtnData, listClassnameProps, btnClassnameProps }: IBtn
             isBtn={data.type === 'btn'}
             isLink={data.type === 'link'}
             isScroll={data.type === 'scroll'}
-            classnameStyles={btnClassnameProps}
+            classnameProps={btnClassnameProps}
           >
             {data.text}
           </Btn>

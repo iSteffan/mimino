@@ -1,9 +1,13 @@
 import classNames from 'classnames';
 
+import data from '@/data/common.json';
+
 import { ISectionTitle } from './type';
 
-export const SectionTitleMimino = ({ classnameProps }: ISectionTitle) => {
-  const addressStyles = classNames('border-around-yellow py-[8px]', classnameProps);
+export const SectionTitleMimino = ({ classnameProps = '' }: ISectionTitle) => {
+  const { logo } = data;
 
-  return <div>SectionTitleMimino</div>;
+  const titleStyles = classNames('sectionTitleMimino', classnameProps);
+
+  return <h2 className={titleStyles}>{logo}</h2>;
 };

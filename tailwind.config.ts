@@ -47,10 +47,9 @@ const config: Config = {
         textGray02: '#5F5F5F',
         textGray03: '#828282',
         textGray04: '#BABABA',
+        textGray05: '#494848',
 
         adressHero: '#E5E5E5',
-        textMiminoDark: '#494848',
-
         heroWhite: '#FDFBEC',
 
         footerBg: '#0E0C07',
