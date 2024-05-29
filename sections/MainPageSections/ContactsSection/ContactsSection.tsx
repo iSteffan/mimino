@@ -4,6 +4,7 @@ import data from '@/data/mainPageData.json';
 import phoneData from '@/data/common.json';
 import { ContactPhone } from '@/components/common/ContactPhone';
 import { HeaderContacts } from '@/components/ui/HeaderContacts';
+import { Map } from '@/components/common/Map';
 
 export const ContactsSection = () => {
   const { complex } = data;
@@ -16,13 +17,14 @@ export const ContactsSection = () => {
         <p className="mb-[16px] font-mont text-[16px] text-textGray02 font-600 leading-normal tracking-[0.32px]">
           {complex}
         </p>
-        {/* <HeaderContacts /> */}
+        <HeaderContacts />
         <div>
           <ContactPhone data={headerLink[0].phone} classnameProps="text-textGray05" />
         </div>
         <div>
           <ContactPhone data={headerLink[1].phone} classnameProps="text-textGray05" />
         </div>
+        <Map />
       </div>
     </section>
   );

@@ -25,7 +25,7 @@ export const ContactAddress = ({
   return (
     <div className={addressStyles}>
       <a
-        href="https://goo.gl/maps/XrxTVzeBdrzJqLxW6"
+        href="https://maps.app.goo.gl/8EfgAUe7yWcouzZ37"
         target="_blank"
         rel="nofollow noopener noreferrer"
         className="flex items-center gap-[8px] font-mont text-[12px] leading-normal tracking-[0.12px] font-400 text-adressHero hover:text-accentYellow01 focus:text-accentYellow01 transitiontransition"
