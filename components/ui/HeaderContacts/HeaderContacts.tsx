@@ -19,7 +19,7 @@ export const HeaderContacts = () => {
             {link.text}
           </Link>
           <div className="hidden md:block">
-            <ContactPhone data={link.phone} />
+            <ContactPhone data={link.phone} classnameProps="text-white" />
           </div>
         </li>
       ))}

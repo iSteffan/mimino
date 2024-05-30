@@ -4,14 +4,23 @@ import PhoneIcon from '@/public/icons/phone.svg';
 
 import { IContactPhone } from './type';
 
-export const ContactPhone = ({ data, classnameProps = '' }: IContactPhone) => {
+export const ContactPhone = ({
+  data,
+  classnameProps = '',
+  classnameDivProps = '',
+}: IContactPhone) => {
   const contactPhoneStyles = classNames(
-    'font-mont text-[14px] leading-normal tracking-[0.28px] font-400 text-white hover:text-accentYellow01 focus:text-accentYellow01 transition-colors',
+    'font-mont text-[14px] leading-normal tracking-[0.28px] font-400 hover:text-accentYellow01 focus:text-accentYellow01 transition-colors',
     classnameProps
   );
 
+  const contactDivStyles = classNames(
+    'flex gap-[16px] items-center p-[8px] border-around-yellow',
+    classnameDivProps
+  );
+
   return (
-    <div className="flex gap-[16px] items-center p-[8px] border-around-yellow">
+    <div className={contactDivStyles}>
       <PhoneIcon className="w-[24px] h-[24px]" />
       {Array.isArray(data) ? (
         <>
