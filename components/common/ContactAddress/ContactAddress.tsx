@@ -23,11 +23,10 @@ export const ContactAddress = ({
   );
 
   const addressLinkStyles = classNames(
-    'flex items-center gap-[8px] font-mont text-[12px] leading-normal tracking-[0.12px] font-400 text-adressHero hover:text-accentYellow01 focus:text-accentYellow01 transitiontransitio',
+    'flex items-center gap-[8px] font-mont text-[12px] leading-normal tracking-[0.12px] font-400 text-adressHero hover:text-accentYellow01 focus:text-accentYellow01 transition',
     {
       'text-[16px] tracking-[0.16px] text-textGray05': isContactSection,
-    },
-    classnameProps
+    }
   );
 
   return (

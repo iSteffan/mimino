@@ -29,8 +29,8 @@ export const ContactsSection = () => {
               </p>
               <ContactPhone
                 data={headerLink[0].phone}
-                classnameProps="text-textGray05"
-                classnameDivProps="row-start-1 row-end-2 col-start-2 col-span-1 w-[148px] gap-[8px]"
+                classnameProps="row-start-1 row-end-2 col-start-2 col-span-1 w-[148px] gap-[8px]"
+                isContactSection
               />
               <p
                 className="row-start-3 row-end-4 col-start-1 col-span-1 font-mont text-[16px] leading-normal tracking-[0.32px] font-500 text-accentYellow01 
@@ -40,8 +40,8 @@ export const ContactsSection = () => {
               </p>
               <ContactPhone
                 data={headerLink[1].phone}
-                classnameProps="text-textGray05"
-                classnameDivProps="row-start-3 row-end-4 col-start-2 col-span-1 gap-[8px]"
+                classnameProps="row-start-3 row-end-4 col-start-2 col-span-1 gap-[8px]"
+                isContactSection
               />
               <ContactAddress
                 classnameProps="row-start-5 row-end-6 col-start-2 col-span-1"
