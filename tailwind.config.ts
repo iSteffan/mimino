@@ -62,6 +62,10 @@ const config: Config = {
           "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/restaurant/restaurantHero.webp')",
         'hero-hotel':
           "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/hotel/hotelHero.webp')",
+        'restaurant-main':
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/main-restaurant-slider-bg.webp')",
+        'hotel-main':
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/main-hotel-slider-bg.webp')",
       },
     },
   },
