@@ -10,6 +10,7 @@ import { ISlider } from './type';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
+import { SliderBtn } from '@/components/ui/SliderBtn';
 
 export const Slider = ({ section, data, className }: ISlider) => {
   const [isPrevSlide, setIsPrevSlide] = useState(true);
@@ -30,7 +31,8 @@ export const Slider = ({ section, data, className }: ISlider) => {
     },
     breakpoints: {
       1024: {
-        slidesPerView: section === 'mainRestaurant' || section === 'mainHotel' ? 3 : 2,
+        slidesPerView:
+          section === 'mainRestaurant' || section === 'mainHotel' ? ('auto' as 'auto') : 2,
         spaceBetween: section === 'mainRestaurant' || section === 'mainHotel' ? 34 : 40,
       },
 
@@ -41,7 +43,6 @@ export const Slider = ({ section, data, className }: ISlider) => {
   };
   return (
     <div className="">
-      {/* <Swiper slidesPerView={'auto'} spaceBetween={30} className="mySwiper"> */}
       <Swiper {...swiperParams} className={`${className}`}>
         {data?.map((card, index) => {
           return (
@@ -51,7 +52,7 @@ export const Slider = ({ section, data, className }: ISlider) => {
           );
         })}
       </Swiper>
-      {/* <SliderBtn section={section} isPrevSlide={isPrevSlide} isNextSlide={isNextSlide} /> */}
+      <SliderBtn section={section} isPrevSlide={isPrevSlide} isNextSlide={isNextSlide} />
     </div>
   );
 };

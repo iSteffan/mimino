@@ -31,5 +31,9 @@
       { "text": "Забронювати номер", "type": "btn", "btnType": "button" },
       { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
     ]
+  },
+  "sliderBtn": {
+    "rightArrow": "Наступний слайд",
+    "leftArrow": "Попередній слайд"
   }
 }
