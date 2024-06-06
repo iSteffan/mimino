@@ -22,7 +22,7 @@ export const Slider = ({ section, data, className }: ISlider) => {
       nextEl: `.button-next-${section}`,
       prevEl: `.button-prev-${section}`,
     },
-    slidesPerView: 1,
+    slidesPerView: 'auto' as 'auto',
     spaceBetween: 20,
     onSlideChange: (swiper: SwiperType) => {
       setIsPrevSlide(swiper.isBeginning);
@@ -41,17 +41,12 @@ export const Slider = ({ section, data, className }: ISlider) => {
   };
   return (
     <div className="">
-      <Swiper {...swiperParams} className={`w-full ${className}`}>
+      {/* <Swiper slidesPerView={'auto'} spaceBetween={30} className="mySwiper"> */}
+      <Swiper {...swiperParams} className={`${className}`}>
         {data?.map((card, index) => {
           return (
             <SwiperSlide key={index}>
-              <Image
-                src={card.img}
-                alt={card.alt}
-                width={415}
-                height={294}
-                className="w-full h-full"
-              />
+              <Image src={card.img} alt={card.alt} width={274} height={270} />
             </SwiperSlide>
           );
         })}

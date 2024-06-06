@@ -25,3 +25,14 @@
     @apply border-[2px] border-white border-solid rounded-[25px];
   }
 }
+
+.swiper .swiper-slide {
+  height: auto;
+  width: auto;
+}
+.swiper-slide img {
+  display: block;
+  width: auto;
+  height: 270px;
+  object-fit: cover;
+}
