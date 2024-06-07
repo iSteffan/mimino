@@ -48,11 +48,13 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
     <section className={sectionStyles}>
       <div className="container relative">
         <h1 className="heroTitleMimino mt-[70px] mb-[24px]">{logo}</h1>
+
         <p className={descriptionStyles}>
           {isMain && heroMainDescription}
           {isRestaurant && heroRestaurantDescription}
           {isHotel && heroHotelDescription}
         </p>
+
         {(isMain || isRestaurant) && (
           <p
             className="mb-[101px] font-times text-heroWhite text-[32px] font-700 leading-normal tracking-[1.6px] text-center 
@@ -61,16 +63,19 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
             {tasteLife}
           </p>
         )}
+
         <div className="flex justify-between mb-[58px] md:mb-[25px] xl:mb-0">
           <ContactAddress
             isHero
             classnameProps="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"
           />
+
           <BtnList
             BtnData={BtnData}
             listClassnameProps="gap-[24px] md:flex-row md:gap-[40px] smOnly:mx-auto"
           />
         </div>
+
         <Socials classnameProps="xl:hidden" />
       </div>
     </section>

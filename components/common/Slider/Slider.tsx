@@ -50,9 +50,9 @@ export const Slider = ({ section, data, className }: ISlider) => {
               <Image
                 src={card.img}
                 alt={card.alt}
-                width={274}
+                width={270}
                 height={270}
-                style={{ width: '274px', height: '270px' }}
+                style={{ width: '270px', height: '270px' }}
               />
             </SwiperSlide>
           );
