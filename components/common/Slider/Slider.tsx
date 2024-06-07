@@ -47,7 +47,13 @@ export const Slider = ({ section, data, className }: ISlider) => {
         {data?.map((card, index) => {
           return (
             <SwiperSlide key={index}>
-              <Image src={card.img} alt={card.alt} width={274} height={270} />
+              <Image
+                src={card.img}
+                alt={card.alt}
+                width={274}
+                height={270}
+                style={{ width: '274px', height: '270px' }}
+              />
             </SwiperSlide>
           );
         })}

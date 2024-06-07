@@ -7,4 +7,5 @@ export interface IBtn {
   isScroll?: boolean;
   classnameProps?: string;
   children: React.ReactNode;
+  linkTo?: string;
 }

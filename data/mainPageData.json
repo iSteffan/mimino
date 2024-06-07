@@ -32,5 +32,11 @@
       "img": "/images/main/restaurantSlider/main-restaurant-slider-7.webp",
       "alt": "Слайд 7"
     }
-  ]
+  ],
+  "btnData": {
+    "restaurantSection": [
+      { "text": "Забронювати столик", "type": "btn", "btnType": "button" },
+      { "text": "Переглянути меню", "type": "link", "btnType": "none", "linkTo": "/restaurant" }
+    ]
+  }
 }

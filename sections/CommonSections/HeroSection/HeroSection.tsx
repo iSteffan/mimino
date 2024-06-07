@@ -68,7 +68,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
           />
           <BtnList
             BtnData={BtnData}
-            listClassnameProps="md:flex-row md:gap-[40px] smOnly:mx-auto"
+            listClassnameProps="gap-[24px] md:flex-row md:gap-[40px] smOnly:mx-auto"
           />
         </div>
         <Socials classnameProps="xl:hidden" />
