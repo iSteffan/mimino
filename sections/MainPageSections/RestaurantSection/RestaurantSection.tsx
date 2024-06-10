@@ -2,7 +2,6 @@ import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
 import { Slider } from '@/components/common/Slider';
 
 import mainPageData from '@/data/mainPageData.json';
-import commonData from '@/data/common.json';
 import { BtnList } from '@/components/common/BtnList';
 
 export const RestaurantSection = () => {

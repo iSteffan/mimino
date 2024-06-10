@@ -16,6 +16,9 @@ export const Slider = ({ section, data, className }: ISlider) => {
   const [isPrevSlide, setIsPrevSlide] = useState(true);
   const [isNextSlide, setIsNextSlide] = useState(false);
 
+  const lastSlide = data.length;
+  console.log(data.length);
+
   const swiperParams = {
     centeredSlides: false,
     modules: [Navigation],
@@ -29,6 +32,7 @@ export const Slider = ({ section, data, className }: ISlider) => {
       setIsPrevSlide(swiper.isBeginning);
       setIsNextSlide(swiper.isEnd);
     },
+    initialSlide: section === 'mainHotel' ? lastSlide : 0,
     breakpoints: {
       1024: {
         slidesPerView:
