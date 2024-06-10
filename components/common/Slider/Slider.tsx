@@ -17,7 +17,6 @@ export const Slider = ({ section, data, className }: ISlider) => {
   const [isNextSlide, setIsNextSlide] = useState(false);
 
   const lastSlide = data.length;
-  console.log(data.length);
 
   const swiperParams = {
     centeredSlides: false,

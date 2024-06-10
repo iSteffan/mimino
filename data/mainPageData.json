@@ -2,7 +2,6 @@
   "complex": "Ресторанно-готельний комплекс",
   "restaurant": "Ресторан",
   "restaurantDesc": "Смакуйте вишукані страви в затишній атмосфері нашого ресторану. Насолоджуйтесь різноманітними делікатесами, приготованими зі свіжих інгредієнтів.",
-  "restaurantSliderData": [],
   "restaurantSlider": [
     {
       "img": "/images/main/restaurantSlider/main-restaurant-slider-1.webp",
@@ -27,16 +26,44 @@
     {
       "img": "/images/main/restaurantSlider/main-restaurant-slider-6.webp",
       "alt": "Слайд 6"
+    }
+  ],
+  "hotel": "Готель",
+  "hotelDesc": "Відчуйте затишок та комфорт в наших стильних номерах. Високий рівень сервісу, сучасні зручності та зручне розташування для вашого відпочинку.",
+  "hotelSlider": [
+    {
+      "img": "/images/main/hotelSlider/main-hotel-slider-1.webp",
+      "alt": "Слайд 1"
     },
     {
-      "img": "/images/main/restaurantSlider/main-restaurant-slider-7.webp",
-      "alt": "Слайд 7"
+      "img": "/images/main/hotelSlider/main-hotel-slider-2.webp",
+      "alt": "Слайд 2"
+    },
+    {
+      "img": "/images/main/hotelSlider/main-hotel-slider-3.webp",
+      "alt": "Слайд 3"
+    },
+    {
+      "img": "/images/main/hotelSlider/main-hotel-slider-4.webp",
+      "alt": "Слайд 4"
+    },
+    {
+      "img": "/images/main/hotelSlider/main-hotel-slider-5.webp",
+      "alt": "Слайд 5"
+    },
+    {
+      "img": "/images/main/hotelSlider/main-hotel-slider-6.webp",
+      "alt": "Слайд 6"
     }
   ],
   "btnData": {
     "restaurantSection": [
       { "text": "Забронювати столик", "type": "btn", "btnType": "button" },
       { "text": "Переглянути меню", "type": "link", "btnType": "none", "linkTo": "/restaurant" }
+    ],
+    "hotelSection": [
+      { "text": "Забронювати номер", "type": "btn", "btnType": "button" },
+      { "text": "Переглянути ціни", "type": "link", "btnType": "none", "linkTo": "/hotel" }
     ]
   }
 }

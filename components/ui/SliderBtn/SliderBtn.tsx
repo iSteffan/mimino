@@ -22,8 +22,9 @@ export const SliderBtn = ({ section, isNextSlide, isPrevSlide }: ISliderBtn) => 
     [css['slider-arrow']]: !isNextSlide,
   });
 
-  const containerClass = classNames('mt-[16px] h-[32px]', {
-    '': section === '',
+  const containerClass = classNames('flex mt-[16px] h-[32px]', {
+    'justify-end': section === 'mainHotel',
+    'justify-start': section === 'mainRestaurant',
   });
 
   return (
