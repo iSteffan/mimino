@@ -35,5 +35,106 @@
   "sliderBtn": {
     "rightArrow": "Наступний слайд",
     "leftArrow": "Попередній слайд"
+  },
+  "descrSectionData": {
+    "complexData": {
+      "title": "Ваш комфорт та вишуканість – це наш пріоритет",
+      "text": "Розкішні інтер'єри нашого комплексу створюють атмосферу спокою та гармонії. Кожна деталь продумана для вашого задоволення.",
+      "additionalText": "Організуйте свої події з нами. Від важливих зустрічей до романтичних вечерь, ми зробимо їх незабутніми.",
+      "image1": "/images/main/main-restaurant-interior-1.webp",
+      "image2": "/images/main/main-restaurant-interior-2.webp",
+      "slider": [
+        {
+          "img": "/images/main/complexSlider/main-complex-slider-1.webp",
+          "alt": "Слайд 1"
+        },
+        {
+          "img": "/images/main/complexSlider/main-complex-slider-2.webp",
+          "alt": "Слайд 2"
+        },
+        {
+          "img": "/images/main/complexSlider/main-complex-slider-3.webp",
+          "alt": "Слайд 3"
+        },
+        {
+          "img": "/images/main/complexSlider/main-complex-slider-4.webp",
+          "alt": "Слайд 4"
+        },
+        {
+          "img": "/images/main/complexSlider/main-complex-slider-5.webp",
+          "alt": "Слайд 5"
+        },
+        {
+          "img": "/images/main/complexSlider/main-complex-slider-6.webp",
+          "alt": "Слайд 6"
+        }
+      ]
+    },
+    "hotelData": {
+      "title": "Відчуйте комфорт і затишок",
+      "text": "Ми пропонуємо вам сучасний дизайн і всі необхідні зручності. Насолоджуйтеся спокоєм та вишуканістю під час вашого перебування у нас.",
+      "additionalText": "Затишні номери нашого готелю створені для вашого відпочинку. Відчуйте себе як вдома з нашими зручностями та сервісом.",
+      "image1": "/images/main/main-apartment-1.webp",
+      "image2": "/images/main/main-apartment-2.webp",
+      "slider": [
+        {
+          "img": "/images/main/apartmentSlider/main-apartment-slider-1.webp",
+          "alt": "Слайд 1"
+        },
+        {
+          "img": "/images/main/apartmentSlider/main-apartment-slider-2.webp",
+          "alt": "Слайд 2"
+        },
+        {
+          "img": "/images/main/apartmentSlider/main-apartment-slider-3.webp",
+          "alt": "Слайд 3"
+        },
+        {
+          "img": "/images/main/apartmentSlider/main-apartment-slider-4.webp",
+          "alt": "Слайд 4"
+        },
+        {
+          "img": "/images/main/apartmentSlider/main-apartment-slider-5.webp",
+          "alt": "Слайд 5"
+        },
+        {
+          "img": "/images/main/apartmentSlider/main-apartment-slider-6.webp",
+          "alt": "Слайд 6"
+        }
+      ]
+    },
+    "restaurantData": {
+      "title": "Відчуйте справжній смак",
+      "text": "Наші шеф-кухарі готують з любов'ю, використовуючи тільки найсвіжіші інгредієнти. Кожна страва – це справжній витвір мистецтва.",
+      "additionalText": "У нас ви знайдете найсмачніші страви. Кожна страва створена з турботою та любов'ю до деталей.",
+      "image1": "/images/restaurant/restaurant-interior-1.webp",
+      "image2": "/images/restaurant/restaurant-interior-2.webp",
+      "slider": [
+        {
+          "img": "/images/restaurant/slider/restaurant-slider-1.webp",
+          "alt": "Слайд 1"
+        },
+        {
+          "img": "/images/restaurant/slider/restaurant-slider-2.webp",
+          "alt": "Слайд 2"
+        },
+        {
+          "img": "/images/restaurant/slider/restaurant-slider-3.webp",
+          "alt": "Слайд 3"
+        },
+        {
+          "img": "/images/restaurant/slider/restaurant-slider-4.webp",
+          "alt": "Слайд 4"
+        },
+        {
+          "img": "/images/restaurant/slider/restaurant-slider-5.webp",
+          "alt": "Слайд 5"
+        },
+        {
+          "img": "/images/restaurant/slider/restaurant-slider-6.webp",
+          "alt": "Слайд 6"
+        }
+      ]
+    }
   }
 }
