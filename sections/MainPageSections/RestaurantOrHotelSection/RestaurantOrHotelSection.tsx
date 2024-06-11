@@ -23,10 +23,18 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
     'ml-[125px] md:ml-[236px]': isRestaurant,
     'mr-[129px] text-end md:mr-[230px]': isHotel,
   });
+
   const flexContainerStyles = classNames('flex flex-col gap-[32px]', {
     'md:flex-row-reverse': isRestaurant,
     'md:flex-row': isHotel,
   });
+
+  const descriptionStyles = classNames(
+    'mb-[48px] font-mont font-600 text-textGray04 text-[12px] tracking-[0.24px] leading-normal md:mb-[40px] md:text-[16px] md:tracking-[0.32px]',
+    {
+      'text-left': isHotel,
+    }
+  );
 
   return (
     <section className={sectionStyles}>
@@ -38,9 +46,7 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
             {isRestaurant ? restaurant : hotel}
           </p>
 
-          <p className="mb-[48px] font-mont font-600 text-textGray04 text-[12px] tracking-[0.24px] leading-normal md:mb-[40px] md:text-[16px] md:tracking-[0.32px]">
-            {isRestaurant ? restaurantDesc : hotelDesc}
-          </p>
+          <p className={descriptionStyles}>{isRestaurant ? restaurantDesc : hotelDesc}</p>
         </div>
 
         <div className={flexContainerStyles}>

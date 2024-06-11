@@ -38,11 +38,17 @@
   },
   "descrSectionData": {
     "complexData": {
-      "title": "Ваш комфорт та вишуканість – це наш пріоритет",
+      "title": "Комфорт та вишуканість",
       "text": "Розкішні інтер'єри нашого комплексу створюють атмосферу спокою та гармонії. Кожна деталь продумана для вашого задоволення.",
       "additionalText": "Організуйте свої події з нами. Від важливих зустрічей до романтичних вечерь, ми зробимо їх незабутніми.",
-      "image1": "/images/main/main-restaurant-interior-1.webp",
-      "image2": "/images/main/main-restaurant-interior-2.webp",
+      "image1": {
+        "src": "/images/main/main-restaurant-interior-1.webp",
+        "alt": "інтер'єр"
+      },
+      "image2": {
+        "src": "/images/main/main-restaurant-interior-2.webp",
+        "alt": "інтер'єр"
+      },
       "slider": [
         {
           "img": "/images/main/complexSlider/main-complex-slider-1.webp",
@@ -71,11 +77,17 @@
       ]
     },
     "hotelData": {
-      "title": "Відчуйте комфорт і затишок",
+      "title": "Відчуйте затишок",
       "text": "Ми пропонуємо вам сучасний дизайн і всі необхідні зручності. Насолоджуйтеся спокоєм та вишуканістю під час вашого перебування у нас.",
       "additionalText": "Затишні номери нашого готелю створені для вашого відпочинку. Відчуйте себе як вдома з нашими зручностями та сервісом.",
-      "image1": "/images/main/main-apartment-1.webp",
-      "image2": "/images/main/main-apartment-2.webp",
+      "image1": {
+        "src": "/images/main/main-apartment-1.webp",
+        "alt": "інтер'єр"
+      },
+      "image2": {
+        "src": "/images/main/main-apartment-2.webp",
+        "alt": "інтер'єр"
+      },
       "slider": [
         {
           "img": "/images/main/apartmentSlider/main-apartment-slider-1.webp",
@@ -107,8 +119,14 @@
       "title": "Відчуйте справжній смак",
       "text": "Наші шеф-кухарі готують з любов'ю, використовуючи тільки найсвіжіші інгредієнти. Кожна страва – це справжній витвір мистецтва.",
       "additionalText": "У нас ви знайдете найсмачніші страви. Кожна страва створена з турботою та любов'ю до деталей.",
-      "image1": "/images/restaurant/restaurant-interior-1.webp",
-      "image2": "/images/restaurant/restaurant-interior-2.webp",
+      "image1": {
+        "src": "/images/restaurant/restaurant-interior-1.webp",
+        "alt": "інтер'єр"
+      },
+      "image2": {
+        "src": "/images/restaurant/restaurant-interior-2.webp",
+        "alt": "інтер'єр"
+      },
       "slider": [
         {
           "img": "/images/restaurant/slider/restaurant-slider-1.webp",
