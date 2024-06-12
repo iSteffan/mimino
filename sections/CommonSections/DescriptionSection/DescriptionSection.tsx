@@ -1,10 +1,11 @@
+import Image from 'next/image';
 import classNames from 'classnames';
 
 import commonData from '@/data/common.json';
 
 import { IDescSection } from './type';
 import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
-import Image from 'next/image';
+import { Slider } from '@/components/common/Slider';
 
 export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSection) => {
   const { descrSectionData } = commonData;
@@ -12,13 +13,17 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
   const { hotelData, complexData, restaurantData } = descrSectionData;
 
   let data;
+  let section: 'mainComplex' | 'mainApartment' | 'restaurant';
 
   if (isHotel) {
     data = hotelData;
+    section = 'mainApartment';
   } else if (isComplex) {
     data = complexData;
+    section = 'mainComplex';
   } else {
     data = restaurantData;
+    section = 'restaurant';
   }
 
   const firstContainerStyles = classNames(
@@ -93,6 +98,8 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
             {data.additionalText}
           </p>
         </div>
+
+        <Slider data={data.slider} section={section} />
       </div>
     </section>
   );

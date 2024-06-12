@@ -2,9 +2,10 @@ import classNames from 'classnames';
 
 import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
 import { Slider } from '@/components/common/Slider';
+import { BtnList } from '@/components/common/BtnList';
 
 import mainPageData from '@/data/mainPageData.json';
-import { BtnList } from '@/components/common/BtnList';
+
 import { IRestaurantOrHotelSection } from './type';
 
 export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantOrHotelSection) => {

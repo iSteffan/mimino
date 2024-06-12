@@ -18,20 +18,53 @@ export const Slider = ({ section, data, className }: ISlider) => {
 
   const lastSlide = data.length;
 
+  const getImageStyle = () => {
+    switch (section) {
+      case 'mainRestaurant':
+      case 'mainHotel':
+        return { width: '270', height: '270px' };
+      case 'mainComplex':
+      case 'mainApartment':
+      case 'restaurant':
+        return {
+          width: '245px',
+          height: '245px',
+          '@media screen and (min-width: 1024px) and (max-width: 1279px)': {
+            width: '194px',
+            height: '194px',
+          },
+        };
+        break;
+      default:
+        return { width: '270px', height: '270px' };
+    }
+  };
+
+  const imageStyle = getImageStyle();
+
   const swiperParams = {
     centeredSlides: false,
     modules: [Navigation],
+    // loop: true,
     navigation: {
       nextEl: `.button-next-${section}`,
       prevEl: `.button-prev-${section}`,
     },
     slidesPerView: 'auto' as 'auto',
     spaceBetween: 20,
+    onReachEnd: () => {
+      setIsNextSlide(true);
+    },
+    onFromEdge: () => {
+      setIsNextSlide(false);
+    },
     onSlideChange: (swiper: SwiperType) => {
+      // console.log('isBeginning:', swiper.isBeginning, 'isEnd:', swiper.isEnd);
+
       setIsPrevSlide(swiper.isBeginning);
       setIsNextSlide(swiper.isEnd);
     },
-    initialSlide: section === 'mainHotel' ? lastSlide : 0,
+    initialSlide: section === 'mainHotel' || section === 'mainApartment' ? lastSlide : 0,
     breakpoints: {
       1024: {
         slidesPerView:
@@ -55,7 +88,9 @@ export const Slider = ({ section, data, className }: ISlider) => {
                 alt={card.alt}
                 width={270}
                 height={270}
-                style={{ width: '270px', height: '270px' }}
+                // className="w-[270px] h-[270px]"
+                // style={{ width: '270px', height: '270px' }}
+                style={{ ...imageStyle }}
               />
             </SwiperSlide>
           );
