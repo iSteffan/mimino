@@ -3,15 +3,23 @@
   transition: fill 300ms ease-out;
 }
 
+.slider-black-arrow path {
+  fill: black;
+  transition: fill 300ms ease-out;
+}
+
 .slider-inactive-arrow path {
   fill: #c7c7c7;
 }
 
 .slider-arrow:hover path,
-.slider-arrow:focus path {
+.slider-arrow:focus path,
+.slider-black-arrow:hover path,
+.slider-black-arrow:focus path {
   fill: #f3c653;
 }
 
-.slider-arrow:active path {
+.slider-arrow:active path,
+.slider-black-arrow:active path {
   fill: #f3c653;
 }

@@ -12,15 +12,30 @@ import { ISliderBtn } from './type';
 export const SliderBtn = ({ section, isNextSlide, isPrevSlide }: ISliderBtn) => {
   const ariaLabel = data.sliderBtn;
 
-  const arrowLeftClass = classNames('h-[32px] w-[32px]', {
-    [css['slider-inactive-arrow']]: isPrevSlide,
-    [css['slider-arrow']]: !isPrevSlide,
-  });
+  let arrowLeftClass;
+  let arrowRightClass;
 
-  const arrowRightClass = classNames('h-[32px] w-[32px]', {
-    [css['slider-inactive-arrow']]: isNextSlide,
-    [css['slider-arrow']]: !isNextSlide,
-  });
+  if (section === 'mainRestaurant' || section === 'mainHotel') {
+    arrowLeftClass = classNames('h-[32px] w-[32px]', {
+      [css['slider-inactive-arrow']]: isPrevSlide,
+      [css['slider-arrow']]: !isPrevSlide,
+    });
+
+    arrowRightClass = classNames('h-[32px] w-[32px]', {
+      [css['slider-inactive-arrow']]: isNextSlide,
+      [css['slider-arrow']]: !isNextSlide,
+    });
+  } else {
+    arrowLeftClass = classNames('h-[32px] w-[32px]', {
+      [css['slider-inactive-arrow']]: isPrevSlide,
+      [css['slider-black-arrow']]: !isPrevSlide,
+    });
+
+    arrowRightClass = classNames('h-[32px] w-[32px]', {
+      [css['slider-inactive-arrow']]: isNextSlide,
+      [css['slider-black-arrow']]: !isNextSlide,
+    });
+  }
 
   const containerClass = classNames('flex mt-[16px] h-[32px]', {
     'justify-end': section === 'mainHotel' || section === 'mainComplex' || section === 'restaurant',
@@ -32,7 +47,7 @@ export const SliderBtn = ({ section, isNextSlide, isPrevSlide }: ISliderBtn) => 
       <button
         aria-label={ariaLabel.rightArrow}
         type="button"
-        className={`button-prev-${section} mr-[32px] cursor-pointer md:mr-16`}
+        className={`button-prev-${section} mr-[32px] cursor-pointer`}
       >
         <ArrowLeft className={arrowLeftClass} />
       </button>
