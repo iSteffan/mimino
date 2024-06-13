@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper';
@@ -12,29 +12,39 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import { SliderBtn } from '@/components/ui/SliderBtn';
 
-export const Slider = ({ section, data, className }: ISlider) => {
+export const Slider = ({ section, data, classnameProps }: ISlider) => {
   const [isPrevSlide, setIsPrevSlide] = useState(true);
   const [isNextSlide, setIsNextSlide] = useState(false);
 
+  const [viewportWidth, setViewportWidth] = useState(0);
+
   const lastSlide = data.length;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const getImageStyle = () => {
     switch (section) {
       case 'mainRestaurant':
       case 'mainHotel':
-        return { width: '270', height: '270px' };
+        return { width: '270px', height: '270px' };
       case 'mainComplex':
       case 'mainApartment':
       case 'restaurant':
-        return {
-          width: '245px',
-          height: '245px',
-          '@media screen and (min-width: 1024px) and (max-width: 1279px)': {
-            width: '194px',
-            height: '194px',
-          },
-        };
-        break;
+        if (viewportWidth >= 1024 && viewportWidth <= 1279) {
+          return { width: '194px', height: '194px' };
+        }
+        return { width: '245px', height: '245px' };
       default:
         return { width: '270px', height: '270px' };
     }
@@ -45,7 +55,6 @@ export const Slider = ({ section, data, className }: ISlider) => {
   const swiperParams = {
     centeredSlides: false,
     modules: [Navigation],
-    // loop: true,
     navigation: {
       nextEl: `.button-next-${section}`,
       prevEl: `.button-prev-${section}`,
@@ -59,8 +68,6 @@ export const Slider = ({ section, data, className }: ISlider) => {
       setIsNextSlide(false);
     },
     onSlideChange: (swiper: SwiperType) => {
-      // console.log('isBeginning:', swiper.isBeginning, 'isEnd:', swiper.isEnd);
-
       setIsPrevSlide(swiper.isBeginning);
       setIsNextSlide(swiper.isEnd);
     },
@@ -78,8 +85,8 @@ export const Slider = ({ section, data, className }: ISlider) => {
     },
   };
   return (
-    <div className="">
-      <Swiper {...swiperParams} className={`${className}`}>
+    <div className={`${classnameProps}`}>
+      <Swiper {...swiperParams}>
         {data?.map((card, index) => {
           return (
             <SwiperSlide key={index}>

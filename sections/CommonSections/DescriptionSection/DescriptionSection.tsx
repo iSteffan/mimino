@@ -57,6 +57,14 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
     'flex-row': isRestaurant || isComplex,
   });
 
+  const sliderContainerStyles = classNames(
+    'mt-[32px] md:w-[428px] md:mt-[-28px] xl:w-[530px] xl:mt-[-167px]',
+    {
+      'mr-[70px] md:mr-auto': isHotel,
+      'ml-[70px] md:ml-auto': isRestaurant || isComplex,
+    }
+  );
+
   // console.log(data?.image1);
   return (
     <section className="pt-[16px] pb-[20px] bg-lemonBg md:pt-[120px] md:pb-[32px] xl:pb-[50px]">
@@ -94,12 +102,12 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
             md:mt-[-16px] md:w-[350px] md:h-[500px] 
             xl:w-[460px] xl:h-[574px]"
           />
-          <p className="mt-[12px] mb-[28px] text-[12px] text-accentYellow02 font-600 tracking-[0.24px] md:mt-[24px] md:max-w-[312px] md:text-[16px] md:tracking-[0.32px]">
+          <p className="text-[12px] text-accentYellow02 font-600 tracking-[0.24px] md:max-w-[312px] md:text-[16px] md:tracking-[0.32px] xl:mb-[115px]">
             {data.additionalText}
           </p>
         </div>
 
-        <Slider data={data.slider} section={section} />
+        <Slider data={data.slider} section={section} classnameProps={sliderContainerStyles} />
       </div>
     </section>
   );

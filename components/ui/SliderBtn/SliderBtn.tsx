@@ -23,8 +23,8 @@ export const SliderBtn = ({ section, isNextSlide, isPrevSlide }: ISliderBtn) => 
   });
 
   const containerClass = classNames('flex mt-[16px] h-[32px]', {
-    'justify-end': section === 'mainHotel',
-    'justify-start': section === 'mainRestaurant',
+    'justify-end': section === 'mainHotel' || section === 'mainComplex' || section === 'restaurant',
+    'justify-start': section === 'mainRestaurant' || section === 'mainApartment',
   });
 
   return (
