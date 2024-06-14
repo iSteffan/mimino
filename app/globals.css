@@ -24,6 +24,9 @@
   .border-around-white {
     @apply border-[2px] border-white border-solid rounded-[25px];
   }
+  .shadow {
+    @apply shadow-xs md:shadow-md;
+  }
 }
 
 .swiper .swiper-slide {
@@ -33,6 +36,56 @@
 .swiper-slide img {
   display: block;
   width: auto;
-  height: 270px;
   object-fit: cover;
+}
+
+/* ----------------------------------Gradient Lines---------------------------------- */
+.two-vertical-lines {
+  position: relative;
+}
+
+.two-vertical-lines::before,
+.two-vertical-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+  background-color: rgba(186, 186, 186, 0.4);
+  filter: blur(0.5px);
+}
+
+.two-vertical-lines::before {
+  left: 33%;
+}
+
+.two-vertical-lines::after {
+  right: 33%;
+}
+
+.third-vertical-line {
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .two-vertical-lines::before {
+    left: 25%;
+  }
+
+  .two-vertical-lines::after {
+    right: 25%;
+  }
+
+  .third-vertical-line::before {
+    content: '';
+    position: absolute;
+    top: -100;
+    left: 50%;
+    bottom: 0;
+
+    width: 1px;
+    background-color: rgba(186, 186, 186, 0.4);
+    filter: blur(0.5px);
+  }
 }

@@ -28,7 +28,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   }
 
   const sectionStyles = classNames(
-    'bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px] md:pt-[100px] xl:pb-[64px]',
+    'two-vertical-lines bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px] md:pt-[100px] xl:pb-[64px]',
     {
       'bg-hero-main': isMain,
       'bg-hero-restaurant': isRestaurant,
@@ -46,7 +46,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
 
   return (
     <section className={sectionStyles}>
-      <div className="container relative">
+      <div className="container relative z-10">
         <h1 className="heroTitleMimino mt-[70px] mb-[24px]">{logo}</h1>
 
         <p className={descriptionStyles}>

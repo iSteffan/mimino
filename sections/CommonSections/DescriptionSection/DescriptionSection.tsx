@@ -45,7 +45,7 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
   const titleStyles = classNames({ 'text-right': isHotel });
 
   const firstImgStyles = classNames(
-    'w-[244px] h-[322px] md:w-[400px] md:h-[524px] md:mt-[-152px] xl:w-[460px] xl:h-[574px]',
+    'shadow w-[244px] h-[322px] md:w-[400px] md:h-[524px] md:mt-[-152px] xl:w-[460px] xl:h-[574px]',
     {
       'smOnly:mr-auto': isHotel,
       'smOnly:ml-auto': isRestaurant || isComplex,
@@ -67,8 +67,8 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
 
   // console.log(data?.image1);
   return (
-    <section className="pt-[16px] pb-[20px] bg-lemonBg md:pt-[120px] md:pb-[32px] xl:pb-[50px]">
-      <div className="container">
+    <section className="two-vertical-lines pt-[16px] pb-[20px] bg-lemonBg md:pt-[120px] md:pb-[32px] xl:pb-[50px]">
+      <div className="container relative z-10">
         <div className={firstContainerStyles}>
           <div className={wrapperStyles}>
             <p className={textStyles}>{data.title}</p>
@@ -98,7 +98,7 @@ export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSe
             alt={data.image2.alt}
             width={200}
             height={278}
-            className="smOnly:ml-auto w-[200px] h-[278px] 
+            className="shadow smOnly:ml-auto w-[200px] h-[278px] 
             md:mt-[-16px] md:w-[350px] md:h-[500px] 
             xl:w-[460px] xl:h-[574px]"
           />

@@ -67,6 +67,10 @@ const config: Config = {
         'hotel-main':
           "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/main-hotel-slider-bg.webp')",
       },
+      boxShadow: {
+        xs: '2px 2px 60px 2px rgba(0, 0, 0, 0.25)',
+        md: '5px 5px 70px 17px rgba(0, 0, 0, 0.25)',
+      },
     },
   },
   plugins: [],

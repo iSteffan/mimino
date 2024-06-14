@@ -15,7 +15,7 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
   const BtnData = isRestaurant ? btnData.restaurantSection : btnData.hotelSection;
   const SliderData = isRestaurant ? restaurantSlider : hotelSlider;
 
-  const sectionStyles = classNames('pt-[24px] pb-[40px] bg-cover bg-center', {
+  const sectionStyles = classNames('pt-[24px] pb-[40px] bg-cover bg-center two-vertical-lines', {
     'bg-restaurant-main': isRestaurant,
     'bg-hotel-main': isHotel,
   });
@@ -39,7 +39,7 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
 
   return (
     <section className={sectionStyles}>
-      <div className="container">
+      <div className="container relative z-10">
         <div className={textContainerStyles}>
           <SectionTitleMimino classnameProps="text-white mb-[12px] md:mb-[16px]" />
 
