@@ -15,9 +15,9 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
   const BtnData = isRestaurant ? btnData.restaurantSection : btnData.hotelSection;
   const SliderData = isRestaurant ? restaurantSlider : hotelSlider;
 
-  const sectionStyles = classNames('pt-[24px] pb-[40px] bg-cover bg-center two-vertical-lines', {
-    'bg-restaurant-main': isRestaurant,
-    'bg-hotel-main': isHotel,
+  const sectionStyles = classNames('pt-[24px] pb-[40px] bg-cover bg-center', {
+    'restaurant-main-bg': isRestaurant,
+    'hotel-main-bg': isHotel,
   });
 
   const textContainerStyles = classNames('', {

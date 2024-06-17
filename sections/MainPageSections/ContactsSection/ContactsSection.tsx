@@ -12,7 +12,7 @@ export const ContactsSection = () => {
   const { headerLink } = phoneData;
 
   return (
-    <section className="bg-lemonBg pt-[36px] pb-[32px] two-vertical-lines">
+    <section className="bg-lemonBg pt-[36px] pb-[32px] gradient-bg">
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="mb-[32px] md:mb-0">

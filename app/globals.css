@@ -27,6 +27,27 @@
   .shadow {
     @apply shadow-xs md:shadow-md;
   }
+
+  .hero-main-bg {
+    @apply bg-hero-main-mobile md:bg-hero-main-tablet;
+  }
+  .hero-restaurant-bg {
+    @apply bg-hero-restaurant-mobile md:bg-hero-restaurant-tablet;
+  }
+  .hero-hotel-bg {
+    @apply bg-hero-hotel-mobile md:bg-hero-hotel-tablet;
+  }
+
+  .restaurant-main-bg {
+    @apply bg-restaurant-main-mobile md:bg-restaurant-main-tablet;
+  }
+  .hotel-main-bg {
+    @apply bg-hotel-main-mobile md:bg-hotel-main-tablet;
+  }
+
+  .gradient-bg {
+    @apply bg-double-gradient md:bg-triple-gradient;
+  }
 }
 
 .swiper .swiper-slide {
@@ -37,55 +58,4 @@
   display: block;
   width: auto;
   object-fit: cover;
-}
-
-/* ----------------------------------Gradient Lines---------------------------------- */
-.two-vertical-lines {
-  position: relative;
-}
-
-.two-vertical-lines::before,
-.two-vertical-lines::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-
-  width: 1px;
-  background-color: rgba(186, 186, 186, 0.4);
-  filter: blur(0.5px);
-}
-
-.two-vertical-lines::before {
-  left: 33%;
-}
-
-.two-vertical-lines::after {
-  right: 33%;
-}
-
-.third-vertical-line {
-  position: relative;
-}
-
-@media screen and (min-width: 1024px) {
-  .two-vertical-lines::before {
-    left: 25%;
-  }
-
-  .two-vertical-lines::after {
-    right: 25%;
-  }
-
-  .third-vertical-line::before {
-    content: '';
-    position: absolute;
-    top: -100;
-    left: 50%;
-    bottom: 0;
-
-    width: 1px;
-    background-color: rgba(186, 186, 186, 0.4);
-    filter: blur(0.5px);
-  }
 }

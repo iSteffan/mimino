@@ -3,12 +3,12 @@
 import classNames from 'classnames';
 
 import { ContactAddress } from '@/components/common/ContactAddress';
+import { BtnList } from '@/components/common/BtnList';
+import { Socials } from '@/components/common/Socials';
 
 import data from '@/data/common.json';
 
 import { IHeroSection } from './type';
-import { BtnList } from '@/components/common/BtnList';
-import { Socials } from '@/components/common/Socials';
 
 export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => {
   const { logo, heroText, tasteLife, heroBtn } = data;
@@ -28,11 +28,11 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   }
 
   const sectionStyles = classNames(
-    'two-vertical-lines bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px] md:pt-[100px] xl:pb-[64px]',
+    'bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px] md:pt-[100px] xl:pb-[64px]',
     {
-      'bg-hero-main': isMain,
-      'bg-hero-restaurant': isRestaurant,
-      'bg-hero-hotel': isHotel,
+      'hero-main-bg': isMain,
+      'hero-restaurant-bg': isRestaurant,
+      'hero-hotel-bg': isHotel,
     }
   );
 

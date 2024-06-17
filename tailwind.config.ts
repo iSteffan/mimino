@@ -1,5 +1,11 @@
 import type { Config } from 'tailwindcss';
 
+const doubleGradient =
+  'linear-gradient(90deg, rgba(0, 0, 0, 0) 33%, rgba(186, 186, 186, 0.4) 33.2%, rgba(0, 0, 0, 0) 33.3%, rgba(0, 0, 0, 0) 66%, rgba(186, 186, 186, 0.4) 66.2%, rgba(0, 0, 0, 0) 66.3%)';
+const tripleGradient =
+  'linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 25%, rgba(186, 186, 186, 0.4) 25.1%, rgba(186, 186, 186, 0.4) 25.2%, rgba(0, 0, 0, 0) 25.3%, rgba(0, 0, 0, 0) 50%, rgba(186, 186, 186, 0.4) 50.1%, rgba(186, 186, 186, 0.4) 50.2%, rgba(0, 0, 0, 0) 50.3%, rgba(0, 0, 0, 0) 75%, rgba(186, 186, 186, 0.4) 75.1%, rgba(186, 186, 186, 0.4) 75.2%, rgba(0, 0, 0, 0) 75.3%, rgba(0, 0, 0, 0))';
+const darkTransparentBackground = 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65))';
+
 const config: Config = {
   content: [
     './app/**/*.{ts,tsx,mdx}',
@@ -56,16 +62,18 @@ const config: Config = {
         lemonBg: '#FFFDEE',
       },
       backgroundImage: {
-        'hero-main':
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/mainHero.webp')",
-        'hero-restaurant':
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/restaurant/restaurantHero.webp')",
-        'hero-hotel':
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/hotel/hotelHero.webp')",
-        'restaurant-main':
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/main-restaurant-slider-bg.webp')",
-        'hotel-main':
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/main/main-hotel-slider-bg.webp')",
+        'hero-main-mobile': `${darkTransparentBackground}, ${doubleGradient}, url('/images/main/mainHero.webp')`,
+        'hero-main-tablet': `${darkTransparentBackground}, ${tripleGradient}, url('/images/main/mainHero.webp')`,
+        'hero-restaurant-mobile': `${darkTransparentBackground}, ${doubleGradient}, url('/images/restaurant/restaurantHero.webp')`,
+        'hero-restaurant-tablet': `${darkTransparentBackground}, ${tripleGradient}, url('/images/restaurant/restaurantHero.webp')`,
+        'hero-hotel-mobile': `${darkTransparentBackground}, ${doubleGradient}, url('/images/hotel/hotelHero.webp')`,
+        'hero-hotel-tablet': `${darkTransparentBackground}, ${tripleGradient}, url('/images/hotel/hotelHero.webp')`,
+        'restaurant-main-mobile': `${darkTransparentBackground}, ${doubleGradient}, url('/images/main/main-restaurant-slider-bg.webp')`,
+        'restaurant-main-tablet': `${darkTransparentBackground}, ${tripleGradient}, url('/images/main/main-restaurant-slider-bg.webp')`,
+        'hotel-main-mobile': `${darkTransparentBackground}, ${doubleGradient}, url('/images/main/main-hotel-slider-bg.webp')`,
+        'hotel-main-tablet': `${darkTransparentBackground}, ${tripleGradient}, url('/images/main/main-hotel-slider-bg.webp')`,
+        'double-gradient': ` ${doubleGradient}`,
+        'triple-gradient': ` ${tripleGradient}`,
       },
       boxShadow: {
         xs: '2px 2px 60px 2px rgba(0, 0, 0, 0.25)',
