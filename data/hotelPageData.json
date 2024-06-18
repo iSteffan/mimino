@@ -1,0 +1,95 @@
+{
+  "double": {
+    "desc": "Затишний та комфортний відпочинок для двох",
+    "room": "ДВОМІСНИЙ НОМЕР",
+    "roomDesc": "Наш затишний двомісний номер забезпечить вам комфортний відпочинок. Тут ви знайдете все необхідне для приємного перебування.",
+    "roomSlider": [
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-1.webp",
+        "alt": "Слайд 1"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-2.webp",
+        "alt": "Слайд 2"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-3.webp",
+        "alt": "Слайд 3"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-4.webp",
+        "alt": "Слайд 4"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-5.webp",
+        "alt": "Слайд 5"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-6.webp",
+        "alt": "Слайд 6"
+      }
+    ]
+  },
+  "triple": {
+    "desc": "Ідеальний вибір для сімей або компаній",
+    "room": "ТРЬОХМІСНИЙ НОМЕР",
+    "roomDesc": "Просторий тримісний номер ідеально підходить для сімей або невеликих компаній. Максимальний комфорт і зручності для вас.",
+    "roomSlider": [
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-1.webp",
+        "alt": "Слайд 1"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-2.webp",
+        "alt": "Слайд 2"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-3.webp",
+        "alt": "Слайд 3"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-4.webp",
+        "alt": "Слайд 4"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-5.webp",
+        "alt": "Слайд 5"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-6.webp",
+        "alt": "Слайд 6"
+      }
+    ]
+  },
+  "doubleLux": {
+    "desc": "Розкіш та комфорт для вашого особливого відпочинку",
+    "room": "ДВОМІСНИЙ НОМЕР люкс",
+    "roomDesc": "Розкішний двомісний номер люкс пропонує високий рівень комфорту та елегантності. Ідеальний для особливих моментів.",
+    "roomSlider": [
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-1.webp",
+        "alt": "Слайд 1"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-2.webp",
+        "alt": "Слайд 2"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-3.webp",
+        "alt": "Слайд 3"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-4.webp",
+        "alt": "Слайд 4"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-5.webp",
+        "alt": "Слайд 5"
+      },
+      {
+        "img": "/images/hotel/slider/hotel-room-slider-6.webp",
+        "alt": "Слайд 6"
+      }
+    ]
+  }
+}
