@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import classNames from 'classnames';
 
+import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
+import { Slider } from '@/components/common/Slider';
+
 import commonData from '@/data/common.json';
 
 import { IDescSection } from './type';
-import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
-import { Slider } from '@/components/common/Slider';
 
 export const DescriptionSection = ({ isHotel, isComplex, isRestaurant }: IDescSection) => {
   const { descrSectionData } = commonData;
