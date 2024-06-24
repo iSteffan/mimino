@@ -45,6 +45,13 @@ export const Slider = ({ section, data, classnameProps }: ISlider) => {
           return { width: '194px', height: '194px' };
         }
         return { width: '245px', height: '245px' };
+      case 'hotelDouble':
+      case 'hotelDoubleLux':
+      case 'hotelTriple':
+        if (viewportWidth < 1280) {
+          return { width: '194px', height: '194px' };
+        }
+        return { width: '254px', height: '254px' };
       default:
         return { width: '270px', height: '270px' };
     }
@@ -71,11 +78,22 @@ export const Slider = ({ section, data, classnameProps }: ISlider) => {
       setIsPrevSlide(swiper.isBeginning);
       setIsNextSlide(swiper.isEnd);
     },
-    initialSlide: section === 'mainHotel' || section === 'mainApartment' ? lastSlide : 0,
+    initialSlide:
+      section === 'mainHotel' ||
+      section === 'mainApartment' ||
+      section === 'hotelDouble' ||
+      section === 'hotelDoubleLux'
+        ? lastSlide
+        : 0,
     breakpoints: {
       1024: {
         slidesPerView:
-          section === 'mainRestaurant' || section === 'mainHotel' ? ('auto' as 'auto') : 2,
+          section === 'mainRestaurant' ||
+          section === 'mainHotel' ||
+          section === 'hotelDouble' ||
+          section === 'hotelDoubleLux'
+            ? ('auto' as 'auto')
+            : 2,
         spaceBetween: section === 'mainRestaurant' || section === 'mainHotel' ? 34 : 40,
       },
 
@@ -95,8 +113,6 @@ export const Slider = ({ section, data, classnameProps }: ISlider) => {
                 alt={card.alt}
                 width={270}
                 height={270}
-                // className="w-[270px] h-[270px]"
-                // style={{ width: '270px', height: '270px' }}
                 style={{ ...imageStyle }}
               />
             </SwiperSlide>

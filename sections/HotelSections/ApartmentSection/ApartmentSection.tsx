@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import classNames from 'classnames';
 
 import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
+import { Slider } from '@/components/common/Slider';
 
 import hotelData from '@/data/hotelPageData.json';
 
@@ -10,14 +12,26 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
   const { double, triple, doubleLux } = hotelData;
 
   let data;
+  let section: 'hotelDouble' | 'hotelDoubleLux' | 'hotelTriple';
 
   if (isDouble) {
-    data = hotelData.double;
+    data = double;
+    section = 'hotelDouble';
   } else if (isDoubleLux) {
-    data = hotelData.doubleLux;
+    data = doubleLux;
+    section = 'hotelDoubleLux';
   } else {
-    data = hotelData.triple;
+    data = triple;
+    section = 'hotelTriple';
   }
+
+  const sectionStyles = classNames(
+    'pt-[16px] pb-[20px] gradient-bg md:pt-[120px] md:pb-[32px] xl:pb-[50px]',
+    {
+      'bg-darkLemonBg': isTriple,
+      'bg-lemonBg': isDouble || isDoubleLux,
+    }
+  );
 
   const textStyles = classNames(
     'mb-[12px] font-times text-[20px] font-400 text-textGray04 md:mb-[4px] md:text-[32px]',
@@ -33,24 +47,50 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
     }
   );
 
+  const textWrapperStyles = classNames({ 'text-start w-fit ml-auto': isTriple });
+
+  const imgStyles = classNames(
+    'shadow w-[244px] h-[322px] md:w-[400px] md:h-[524px] md:mt-[-152px] xl:w-[460px] xl:h-[574px]',
+    {
+      'smOnly:mr-auto': isTriple,
+      'smOnly:ml-auto': isDouble || isDoubleLux,
+    }
+  );
+
   return (
-    <section className="pt-[16px] pb-[20px] bg-lemonBg gradient-bg md:pt-[120px] md:pb-[32px] xl:pb-[50px]">
+    <section className={sectionStyles}>
       <div className="container relative z-10">
         <div>
           <p className={textStyles}>{data.desc}</p>
 
           <SectionTitleMimino classnameProps={titleStyles} />
 
-          <p className={roomTextStyles}>{data.room}</p>
+          <div className={textWrapperStyles}>
+            <p className={roomTextStyles}>{data.room}</p>
 
-          <p
-            className="max-w-[258px] text-[12px] text-textGray02 font-600 tracking-[0.24px] 
+            <p
+              className="mb-[32px] max-w-[258px] text-[12px] text-textGray02 font-600 tracking-[0.24px] 
             md:mt-[24px] md:max-w-[439px] md:text-[16px] md:tracking-[0.32px]
             xl:max-w-[518px]"
-          >
-            {data.roomDesc}
-          </p>
+            >
+              {data.roomDesc}
+            </p>
+          </div>
         </div>
+        <Image
+          src={data.image.src}
+          alt={data.image.alt}
+          priority
+          width={244}
+          height={322}
+          className={imgStyles}
+        />
+
+        <Slider
+          data={data.roomSlider}
+          section={section}
+          // classnameProps={sliderContainerStyles}
+        />
       </div>
     </section>
   );

@@ -60,6 +60,7 @@ const config: Config = {
 
         footerBg: '#0E0C07',
         lemonBg: '#FFFDEE',
+        darkLemonBg: '#F0ECD6',
       },
       backgroundImage: {
         'hero-main-mobile': `${darkTransparentBackground}, ${doubleGradient}, url('/images/main/mainHero.webp')`,
