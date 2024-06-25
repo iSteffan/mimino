@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
 import { Slider } from '@/components/common/Slider';
+import { BtnList } from '@/components/common/BtnList';
 
 import hotelData from '@/data/hotelPageData.json';
 
@@ -26,7 +27,7 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
   }
 
   const sectionStyles = classNames(
-    'pt-[16px] pb-[20px] gradient-bg md:pt-[120px] md:pb-[32px] xl:pb-[50px]',
+    'pt-[32px] pb-[32px] gradient-bg md:pt-[120px] md:pb-[32px] xl:pb-[50px]',
     {
       'bg-darkLemonBg': isTriple,
       'bg-lemonBg': isDouble || isDoubleLux,
@@ -54,6 +55,14 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
     {
       'smOnly:mr-auto': isTriple,
       'smOnly:ml-auto': isDouble || isDoubleLux,
+    }
+  );
+
+  const sliderContainerStyles = classNames(
+    'mt-[32px] md:w-[428px] md:mt-[-28px] xl:w-[530px] xl:mt-[-167px]',
+    {
+      'mr-[70px] md:mr-auto': isDouble || isDoubleLux,
+      'ml-[70px] md:ml-auto': isTriple,
     }
   );
 
@@ -86,10 +95,12 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
           className={imgStyles}
         />
 
-        <Slider
-          data={data.roomSlider}
-          section={section}
-          // classnameProps={sliderContainerStyles}
+        <Slider data={data.roomSlider} section={section} classnameProps={sliderContainerStyles} />
+
+        <BtnList
+          BtnData={data.btnData}
+          listClassnameProps="gap-[16px] mt-[20px]"
+          btnClassnameProps="bg-black"
         />
       </div>
     </section>

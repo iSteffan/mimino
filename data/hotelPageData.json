@@ -32,6 +32,10 @@
         "img": "/images/hotel/slider/hotel-room-slider-6.webp",
         "alt": "Слайд 6"
       }
+    ],
+    "btnData": [
+      { "text": "Детальніше", "type": "link", "btnType": "none", "linkTo": "/hotel/double-room" },
+      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
     ]
   },
   "triple": {
@@ -67,6 +71,10 @@
         "img": "/images/hotel/slider/hotel-room-slider-6.webp",
         "alt": "Слайд 6"
       }
+    ],
+    "btnData": [
+      { "text": "Детальніше", "type": "link", "btnType": "none", "linkTo": "/hotel/triple-room" },
+      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
     ]
   },
   "doubleLux": {
@@ -102,6 +110,15 @@
         "img": "/images/hotel/slider/hotel-room-slider-6.webp",
         "alt": "Слайд 6"
       }
+    ],
+    "btnData": [
+      {
+        "text": "Детальніше",
+        "type": "link",
+        "btnType": "none",
+        "linkTo": "/hotel/double-lux-room"
+      },
+      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
     ]
   }
 }
