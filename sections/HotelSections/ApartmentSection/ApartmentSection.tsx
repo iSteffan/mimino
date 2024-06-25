@@ -27,12 +27,25 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
   }
 
   const sectionStyles = classNames(
-    'pt-[32px] pb-[32px] gradient-bg md:pt-[120px] md:pb-[32px] xl:pb-[50px]',
+    'pt-[32px] pb-[32px] gradient-bg md:pt-[62px] md:pb-[40px] xl:pb-[50px]',
     {
       'bg-darkLemonBg': isTriple,
       'bg-lemonBg': isDouble || isDoubleLux,
     }
   );
+
+  const firstContainerStyles = classNames(
+    'flex flex-col gap-[26px] mb-[32px] md:mb-[48px] xl:gap-[37px]',
+    {
+      'md:flex-row-reverse': isTriple,
+      'md:flex-row': isDouble || isDoubleLux,
+    }
+  );
+
+  const secondContainerStyles = classNames('flex flex-col', {
+    'md:flex-row-reverse': isTriple,
+    'md:flex-row': isDouble || isDoubleLux,
+  });
 
   const textStyles = classNames(
     'mb-[12px] font-times text-[20px] font-400 text-textGray04 md:mb-[4px] md:text-[32px]',
@@ -51,57 +64,59 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
   const textWrapperStyles = classNames({ 'text-start w-fit ml-auto': isTriple });
 
   const imgStyles = classNames(
-    'shadow w-[244px] h-[322px] md:w-[400px] md:h-[524px] md:mt-[-152px] xl:w-[460px] xl:h-[574px]',
+    'shadow w-[244px] h-[322px] md:w-[400px] md:h-[524px] md:mt-[-98px] xl:w-[460px] xl:h-[574px]',
     {
       'smOnly:mr-auto': isTriple,
       'smOnly:ml-auto': isDouble || isDoubleLux,
     }
   );
 
-  const sliderContainerStyles = classNames(
-    'mt-[32px] md:w-[428px] md:mt-[-28px] xl:w-[530px] xl:mt-[-167px]',
-    {
-      'mr-[70px] md:mr-auto': isDouble || isDoubleLux,
-      'ml-[70px] md:ml-auto': isTriple,
-    }
-  );
+  const sliderContainerStyles = classNames('md:w-[428px] md:mt-[0px] xl:w-[548px] xl:mt-[0px]', {
+    'mr-[70px] md:mr-auto': isDouble || isDoubleLux,
+    'ml-[70px] md:ml-auto': isTriple,
+  });
 
   return (
     <section className={sectionStyles}>
       <div className="container relative z-10">
-        <div>
-          <p className={textStyles}>{data.desc}</p>
+        <div className={firstContainerStyles}>
+          <div>
+            <p className={textStyles}>{data.desc}</p>
 
-          <SectionTitleMimino classnameProps={titleStyles} />
+            <SectionTitleMimino classnameProps={titleStyles} />
 
-          <div className={textWrapperStyles}>
-            <p className={roomTextStyles}>{data.room}</p>
+            <div className={textWrapperStyles}>
+              <p className={roomTextStyles}>{data.room}</p>
 
-            <p
-              className="mb-[32px] max-w-[258px] text-[12px] text-textGray02 font-600 tracking-[0.24px] 
+              <p
+                className="max-w-[258px] text-[12px] text-textGray02 font-600 tracking-[0.24px] 
             md:mt-[24px] md:max-w-[439px] md:text-[16px] md:tracking-[0.32px]
             xl:max-w-[518px]"
-            >
-              {data.roomDesc}
-            </p>
+              >
+                {data.roomDesc}
+              </p>
+            </div>
           </div>
+
+          <Image
+            src={data.image.src}
+            alt={data.image.alt}
+            priority
+            width={244}
+            height={322}
+            className={imgStyles}
+          />
         </div>
-        <Image
-          src={data.image.src}
-          alt={data.image.alt}
-          priority
-          width={244}
-          height={322}
-          className={imgStyles}
-        />
 
-        <Slider data={data.roomSlider} section={section} classnameProps={sliderContainerStyles} />
+        <div className={secondContainerStyles}>
+          <Slider data={data.roomSlider} section={section} classnameProps={sliderContainerStyles} />
 
-        <BtnList
-          BtnData={data.btnData}
-          listClassnameProps="gap-[16px] mt-[20px]"
-          btnClassnameProps="bg-black"
-        />
+          <BtnList
+            BtnData={data.btnData}
+            listClassnameProps="gap-[16px] mt-[20px] md:mt-[41px] xl:mt-[72px]"
+            btnClassnameProps="bg-black"
+          />
+        </div>
       </div>
     </section>
   );
