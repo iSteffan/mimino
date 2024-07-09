@@ -29,7 +29,25 @@
           "name": "МЕДІА",
           "text": "Номер оснащений телевізором з плоским екраном та кабельним телебаченням. Також є безкоштовний Wi-Fi, щоб ви могли залишатися на зв’язку з рідними та друзями."
         }
-      }
+      },
+      "slider": [
+        {
+          "img": "/images/room/room-slider-1.webp",
+          "alt": "Слайд 1"
+        },
+        {
+          "img": "/images/room/room-slider-2.webp",
+          "alt": "Слайд 2"
+        },
+        {
+          "img": "/images/room/room-slider-3.webp",
+          "alt": "Слайд 3"
+        },
+        {
+          "img": "/images/room/room-slider-4.webp",
+          "alt": "Слайд 4"
+        }
+      ]
     },
     {
       "name": "double-lux-room",
@@ -60,7 +78,25 @@
           "name": "МЕДІА",
           "text": "Люкс обладнаний великим телевізором з плоским екраном, домашнім кінотеатром та безкоштовним високошвидкісним Wi-Fi. Ви зможете насолоджуватися медіарозвагами на найвищому рівні."
         }
-      }
+      },
+      "slider": [
+        {
+          "img": "/images/room/room-slider-6.webp",
+          "alt": "Слайд 1"
+        },
+        {
+          "img": "/images/room/room-slider-7.webp",
+          "alt": "Слайд 2"
+        },
+        {
+          "img": "/images/room/room-slider-5.webp",
+          "alt": "Слайд 3"
+        },
+        {
+          "img": "/images/room/room-slider-8.webp",
+          "alt": "Слайд 4"
+        }
+      ]
     },
     {
       "name": "triple-room",
@@ -91,7 +127,25 @@
           "name": "МЕДІА",
           "text": "Номер обладнаний телевізором з кабельними каналами та безкоштовним Wi-Fi. Ви можете дивитися улюблені передачі або користуватися інтернетом без обмежень."
         }
-      }
+      },
+      "slider": [
+        {
+          "img": "/images/room/room-slider-3.webp",
+          "alt": "Слайд 1"
+        },
+        {
+          "img": "/images/room/room-slider-4.webp",
+          "alt": "Слайд 2"
+        },
+        {
+          "img": "/images/room/room-slider-7.webp",
+          "alt": "Слайд 3"
+        },
+        {
+          "img": "/images/room/room-slider-1.webp",
+          "alt": "Слайд 4"
+        }
+      ]
     }
   ],
   "reserve": "ОФОРМИТИ БРОНЮВАННЯ",
