@@ -1,16 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper';
+
+import { SliderBtn } from '@/components/ui/SliderBtn';
 
 import { ISlider } from './type';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Image from 'next/image';
-import { SliderBtn } from '@/components/ui/SliderBtn';
 
 export const Slider = ({ section, data, classnameProps }: ISlider) => {
   const [isPrevSlide, setIsPrevSlide] = useState(true);
