@@ -1,0 +1,13 @@
+.icon path {
+  fill: #c79002;
+  transition: fill 300ms ease-out;
+}
+
+.btn:hover .icon path,
+.btn:focus .icon path {
+  fill: #f3c653;
+}
+
+.btn:active .icon path {
+  fill: #f3c653;
+}

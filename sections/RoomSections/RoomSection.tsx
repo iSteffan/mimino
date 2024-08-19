@@ -4,7 +4,11 @@ import { Btn } from '@/components/common/Btn';
 
 import roomData from '@/data/room.json';
 
+import LeftArrowIcon from '@/public/icons/arrow-right.svg';
+
 import { IRoomSection } from './type';
+
+import css from './RoomSection.module.css';
 
 export const RoomSection = ({ room }: IRoomSection) => {
   //   console.log(room);
@@ -41,9 +45,15 @@ export const RoomSection = ({ room }: IRoomSection) => {
         <Btn
           isLink
           linkTo={roomData.goBack.link}
-          classnameProps="mt-[20px] w-full bg-none border-white hover:border-white"
+          classnameProps={`${css['btn']} flex justify-between items-center mt-[20px] px-[16px] py-0 font-mont 
+          text-accentYellow02 w-full text-[16px] tracking-[0.32px] bg-transparent border-none
+          hover:text-accentYellow01 focus:text-accentYellow01 hover:bg-transparent focus:bg-transparent`}
+          // classnameProps={`${css['btn']} flex justify-between items-center mt-[20px] px-[16px] py-0 font-mont
+          // text-accentYellow02 w-full text-[16px] tracking-[0.32px] bg-none border-around-transparent
+          // hover:border-around-transparent hover:text-accentYellow01 focus:border-around-transparent focus:text-accentYellow01`}
         >
           {roomData.goBack.name}
+          <LeftArrowIcon className={`${css['icon']} h-[24px] w-[24px]`} />
         </Btn>
       </div>
     </section>

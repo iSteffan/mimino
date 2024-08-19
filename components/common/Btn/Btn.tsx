@@ -16,7 +16,7 @@ export const Btn = ({
   linkTo,
 }: IBtn) => {
   const btnStyles = classNames(
-    'block border-around-white py-[15px] w-[236px] font-mont text-center text-accentYellow01 text-[16px] leading-normal tracking-[0.32px] font-700 hover:bg-white focus:bg-white hover:border-accentYellow01 focus:border-accentYellow01 transition-colors',
+    'block border-white rounded-[25px] py-[15px] w-[236px] font-mont text-center text-accentYellow01 text-[16px] leading-normal tracking-[0.32px] font-700 hover:bg-white focus:bg-white hover:border-accentYellow01 focus:border-accentYellow01 transition-colors',
     classnameProps
   );
 
