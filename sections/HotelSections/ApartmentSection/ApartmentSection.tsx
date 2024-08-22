@@ -114,7 +114,7 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
           <BtnList
             BtnData={data.btnData}
             listClassnameProps="gap-[16px] mt-[20px] md:mt-[41px] xl:mt-[72px]"
-            btnClassnameProps="bg-black"
+            btnClassnameProps="bg-black border-white rounded-[25px] border-[2px]"
           />
         </div>
       </div>

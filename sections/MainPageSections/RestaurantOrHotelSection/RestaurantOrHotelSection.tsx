@@ -52,7 +52,11 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
 
         <div className={flexContainerStyles}>
           <Slider section={isRestaurant ? 'mainRestaurant' : 'mainHotel'} data={SliderData} />
-          <BtnList BtnData={BtnData} listClassnameProps="gap-[16px] md:mt-[151px]" />
+          <BtnList
+            BtnData={BtnData}
+            listClassnameProps="gap-[16px] md:mt-[151px]"
+            btnClassnameProps="border-white rounded-[25px] border-[2px]"
+          />
         </div>
       </div>
     </section>

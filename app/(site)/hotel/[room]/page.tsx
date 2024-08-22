@@ -16,12 +16,11 @@ export default function Page({ params }: Props) {
     return <div>Room not found</div>;
   }
   return (
-    <div>
-      room page
-      <div>
+    <>
+      <div className="max-w-full mx-auto mt-[-64px]">
         <RoomSlider data={data.slider} />
       </div>
       <RoomSection room={data} />
-    </div>
+    </>
   );
 }

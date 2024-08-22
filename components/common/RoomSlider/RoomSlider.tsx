@@ -39,9 +39,10 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
               <Image
                 src={card.img}
                 alt={card.alt}
-                width={270}
-                height={270}
+                width={417}
+                height={740}
                 // style={{ ...imageStyle }}
+                style={{ height: '740px', width: '100%' }}
               />
             </SwiperSlide>
           );

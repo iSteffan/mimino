@@ -52,12 +52,9 @@ export const RoomSection = ({ room }: IRoomSection) => {
           isLink
           linkTo={roomData.goBack.link}
           classnameProps={`${css['btn']} flex justify-between items-center mt-[20px] px-[16px] py-0 font-mont 
-          text-accentYellow02 w-full text-[16px] tracking-[0.32px] bg-transparent border-none
-          hover:text-accentYellow01 focus:text-accentYellow01 hover:bg-transparent focus:bg-transparent
+          text-accentYellow02 w-full text-[16px] tracking-[0.32px] bg-lemonBg border-0
+          hover:text-accentYellow01 focus:text-accentYellow01 hover:bg-lemonBg focus:bg-lemonBg hover:border-transparent focus:border-transparent
           md:w-[434px] md:ml-auto md:mt-[32px]`}
-          // classnameProps={`${css['btn']} flex justify-between items-center mt-[20px] px-[16px] py-0 font-mont
-          // text-accentYellow02 w-full text-[16px] tracking-[0.32px] bg-none border-around-transparent
-          // hover:border-around-transparent hover:text-accentYellow01 focus:border-around-transparent focus:text-accentYellow01`}
         >
           {roomData.goBack.name}
           <LeftArrowIcon className={`${css['icon']} h-[24px] w-[24px]`} />

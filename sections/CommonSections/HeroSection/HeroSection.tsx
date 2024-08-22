@@ -73,6 +73,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
           <BtnList
             BtnData={BtnData}
             listClassnameProps="gap-[24px] md:flex-row md:gap-[40px] smOnly:mx-auto"
+            btnClassnameProps="border-white rounded-[25px] border-[2px]"
           />
         </div>
 

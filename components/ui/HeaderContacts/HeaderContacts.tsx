@@ -12,7 +12,7 @@ export const HeaderContacts = () => {
       {headerLink.map(link => (
         <li key={link.text} className="flex items-center">
           <Link
-            href={`./${link.href}`}
+            href={`/${link.href}`}
             className="font-mont text-[16px] leading-normal tracking-[0.32px] font-500 text-accentYellow01 
             md:text-[20px] md:tracking-[0.4px] md:mr-[32px] hover:text-white focus:text-white transition-colors"
           >
