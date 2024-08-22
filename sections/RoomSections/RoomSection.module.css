@@ -3,6 +3,11 @@
   transition: fill 300ms ease-out;
 }
 
+.btn {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .btn:hover .icon path,
 .btn:focus .icon path {
   fill: #f3c653;
