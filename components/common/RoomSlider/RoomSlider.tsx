@@ -1,20 +1,33 @@
 'use client';
 
 import Image from 'next/image';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { Swiper as SwiperType } from 'swiper';
+
+import ArrowLeft from '@/public/icons/room-arrow-left.svg';
+import ArrowRight from '@/public/icons/room-arrow-right.svg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import css from './RoomSlider.module.css';
+
 import { IRoomSlider } from './type';
 
 export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
-  const swiperBtn = useSwiper();
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.navigation) {
+      swiperRef.current.navigation.update();
+    }
+  }, [swiperRef]);
 
   const swiperParams = {
     centeredSlides: true,
-
+    loop: true,
     modules: [Navigation],
     navigation: {
       nextEl: `.button-next`,
@@ -34,37 +47,35 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
 
   return (
     <div className={`${classnameProps}`}>
-      <Swiper {...swiperParams}>
-        {data.map((card, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <Image
-                src={card.img}
-                alt={card.alt}
-                width={417}
-                height={740}
-                // style={{ ...imageStyle }}
-                style={{ height: '740px', width: '100%' }}
-              />
-            </SwiperSlide>
-          );
-        })}
+      <Swiper {...swiperParams} onSwiper={swiper => (swiperRef.current = swiper)}>
+        {data.map((card, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={card.img}
+              alt={card.alt}
+              width={417}
+              height={740}
+              style={{ height: '740px', width: '100%' }}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
-      <button
-        type="button"
-        onClick={() => swiperBtn.slidePrev()}
-        className="text-[33px] font-100 hover-underline"
-      >
-        BACK
-      </button>
-      <button
-        type="button"
-        onClick={() => swiperBtn.slideNext()}
-        className="text-[33px] font-100 hover-underline"
-      >
-        NEXT
-      </button>
-      {/* <SliderBtn section={section} isPrevSlide={isPrevSlide} isNextSlide={isNextSlide} /> */}
+      <div className="px-[15px] flex justify-between w-full absolute top-[50%] z-30">
+        <button
+          type="button"
+          onClick={() => swiperRef.current?.slidePrev()}
+          className={`${css['btn']} button-prev w-[40px] h-[40px]`}
+        >
+          <ArrowLeft className={`${css['icon']}`} />
+        </button>
+        <button
+          type="button"
+          onClick={() => swiperRef.current?.slideNext()}
+          className={`${css['btn']} button-prev w-[40px] h-[40px]`}
+        >
+          <ArrowRight className={`${css['icon']}`} />
+        </button>
+      </div>
     </div>
   );
 };

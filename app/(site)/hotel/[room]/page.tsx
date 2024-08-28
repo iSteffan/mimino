@@ -18,7 +18,7 @@ export default function Page({ params }: Props) {
   return (
     <>
       <div className="max-w-full mx-auto mt-[-64px]">
-        <RoomSlider data={data.slider} />
+        <RoomSlider data={data.slider} classnameProps="relative" />
       </div>
       <RoomSection room={data} />
     </>

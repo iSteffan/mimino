@@ -1,0 +1,23 @@
+.icon path {
+  fill: #c79002;
+  transition: fill 300ms ease-out;
+}
+
+.icon rect {
+  fill: black;
+  fill-opacity: 0.65; /* Зберігаємо фон */
+}
+
+.btn {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.btn:hover .icon path,
+.btn:focus .icon path {
+  fill: #f3c653;
+}
+
+.btn:active .icon path {
+  fill: #f3c653;
+}
