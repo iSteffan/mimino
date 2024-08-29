@@ -12,8 +12,6 @@ import ArrowRight from '@/public/icons/room-arrow-right.svg';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import css from './RoomSlider.module.css';
-
 import { IRoomSlider } from './type';
 
 export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
@@ -64,16 +62,16 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
         <button
           type="button"
           onClick={() => swiperRef.current?.slidePrev()}
-          className={`${css['btn']} button-prev w-[40px] h-[40px]`}
+          className="button-prev w-[40px] h-[40px]"
         >
-          <ArrowLeft className={`${css['icon']}`} />
+          <ArrowLeft />
         </button>
         <button
           type="button"
           onClick={() => swiperRef.current?.slideNext()}
-          className={`${css['btn']} button-prev w-[40px] h-[40px]`}
+          className="button-prev w-[40px] h-[40px]"
         >
-          <ArrowRight className={`${css['icon']}`} />
+          <ArrowRight />
         </button>
       </div>
     </div>
