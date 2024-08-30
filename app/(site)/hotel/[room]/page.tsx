@@ -1,6 +1,7 @@
-import { RoomSlider } from '@/components/common/RoomSlider';
-import roomData from '@/data/room.json';
 import { RoomSection } from '@/sections/RoomSections';
+import { RoomHeroSection } from '@/sections/RoomSections/RoomHeroSection';
+
+import roomData from '@/data/room.json';
 
 interface Props {
   params: {
@@ -17,9 +18,7 @@ export default function Page({ params }: Props) {
   }
   return (
     <>
-      <div className="max-w-full mx-auto mt-[-64px]">
-        <RoomSlider data={data.slider} classnameProps="relative" />
-      </div>
+      <RoomHeroSection sliderData={data.slider} />
       <RoomSection room={data} />
     </>
   );

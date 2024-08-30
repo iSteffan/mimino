@@ -69,7 +69,7 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
         <button
           type="button"
           onClick={() => swiperRef.current?.slideNext()}
-          className="button-prev w-[40px] h-[40px]"
+          className="button-next w-[40px] h-[40px]"
         >
           <ArrowRight />
         </button>
