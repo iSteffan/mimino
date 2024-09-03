@@ -18,7 +18,7 @@ export default function Page({ params }: Props) {
   }
   return (
     <>
-      <RoomHeroSection sliderData={data.slider} />
+      <RoomHeroSection room={data} />
       <RoomSection room={data} />
     </>
   );
