@@ -9,10 +9,10 @@ import { IRoomSection } from '../type';
 
 export const RoomHeroSection = ({ room }: IRoomSection) => {
   return (
-    <div className="max-w-full mx-auto mt-[-64px]">
+    <div className="max-w-full mx-auto mt-[-64px] md:mt-[-104px]">
       <RoomSlider data={room.slider} classnameProps="relative" />
       <div className="container absolute top-[64px] left-1/2 z-40 transform -translate-x-1/2 md:hidden">
-        <ContactAddress isHero classnameProps="ml-auto flex md:relative md:h-[56px] md:top-0" />
+        <ContactAddress isHero classnameDivProps="ml-auto flex md:relative md:h-[56px] md:top-0" />
       </div>
 
       <div className="container absolute top-[483px] left-1/2 z-40 transform -translate-x-1/2">
@@ -28,15 +28,15 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
 
         <div className="flex items-center">
           <ContactAddress
-            isHero
-            // classnameProps="absolute top-[64px] right-0 z-20 flex md:relative md:h-[56px] md:top-0"
-            classnameProps="hidden flex md:visible md:relative md:h-[56px] md:top-0"
+            isRoomHero
+            classnameDivProps="hidden md:block w-[285px]"
+            classnameLinkProps="text-[16px] tracking-[0.16px] px-[8px]"
           />
-          <Socials classnameProps="flex-col gap-[8px]" />
+          <Socials classnameProps="flex-col gap-[8px] md:flex-row md:gap-[12px] md:ml-[40px]" />
           <Btn
             isBtn
             type="button"
-            classnameProps="h-[48px] py-[12px] ml-[109px] border-white rounded-[25px] border-[2px]"
+            classnameProps="h-[54px] py-[12px] ml-[109px] border-white rounded-[25px] border-[2px] md:py-[14px]"
           >
             {roomData.checkPrice}
           </Btn>

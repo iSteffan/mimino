@@ -9,7 +9,9 @@ import { IContactAdress } from './type';
 export const ContactAddress = ({
   isContactSection,
   isHero,
-  classnameProps = '',
+  classnameDivProps = '',
+  classnameLinkProps = '',
+  isRoomHero,
 }: IContactAdress) => {
   const { address } = data;
 
@@ -19,15 +21,20 @@ export const ContactAddress = ({
       'pl-[10px] pr-[33px] w-full': isContactSection,
       'px-[6px] w-[210px]': isHero,
     },
-    classnameProps
+    classnameDivProps
   );
 
   const addressLinkStyles = classNames(
     'flex items-center gap-[8px] font-mont text-[12px] leading-normal tracking-[0.12px] font-400 text-adressHero hover:text-accentYellow01 focus:text-accentYellow01 transition',
     {
       'text-[16px] tracking-[0.16px] text-textGray05': isContactSection,
-    }
+    },
+    classnameLinkProps
   );
+
+  const iconStyles = classNames('w-[20px] h-[20px] shrink-0 text-accentYellow01', {
+    'w-[24px] h-[24px]': isRoomHero,
+  });
 
   return (
     <div className={addressDivStyles}>
@@ -37,7 +44,7 @@ export const ContactAddress = ({
         rel="nofollow noopener noreferrer"
         className={addressLinkStyles}
       >
-        <PinIcon className="w-[20px] h-[20px] shrink-0 text-accentYellow01" />
+        <PinIcon className={iconStyles} />
         {address}
       </a>
     </div>

@@ -1,5 +1,7 @@
 export interface IContactAdress {
   isHero?: boolean;
+  isRoomHero?: boolean;
   isContactSection?: boolean;
-  classnameProps?: string;
+  classnameDivProps?: string;
+  classnameLinkProps?: string;
 }

@@ -67,7 +67,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
         <div className="flex justify-between mb-[58px] md:mb-[25px] xl:mb-0">
           <ContactAddress
             isHero
-            classnameProps="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"
+            classnameDivProps="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"
           />
 
           <BtnList
