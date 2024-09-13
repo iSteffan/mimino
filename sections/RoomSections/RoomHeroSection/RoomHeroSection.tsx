@@ -15,18 +15,18 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
         <ContactAddress isHero classnameDivProps="ml-auto flex md:relative md:h-[56px] md:top-0" />
       </div>
 
-      <div className="container absolute top-[483px] left-1/2 z-40 transform -translate-x-1/2">
+      <div className="container absolute top-[483px] leading-normal left-1/2 z-40 transform -translate-x-1/2">
         <h2
-          className="mb-[14px] text-white font-times text-[28px] font-700 tracking-[1.4px]
+          className="mb-[14px] max-w-[345px] text-white font-times text-[28px] font-700 tracking-[1.4px] 
          md:text-[36px] md:tracking-[1.8px]"
         >
           {room.title}
         </h2>
-        <p className="mb-[16px] text-white font-mont text-[12px] font-700 tracking-[0.24px] md:text-[16px] md:tracking-[0.32px]">
+        <p className="mb-[16px] max-w-[345px] text-white font-mont text-[12px] font-700 tracking-[0.24px] md:text-[16px] md:tracking-[0.32px]">
           {room.desc.title}
         </p>
 
-        <div className="flex items-center">
+        <div className="flex items-center max-w-[345px]">
           <ContactAddress
             isRoomHero
             classnameDivProps="hidden md:block w-[285px]"
@@ -36,7 +36,7 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
           <Btn
             isBtn
             type="button"
-            classnameProps="h-[54px] py-[12px] ml-[109px] border-white rounded-[25px] border-[2px] md:py-[14px]"
+            classnameProps="h-[54px] py-[12px] ml-auto border-white rounded-[25px] border-[2px] md:py-[14px]"
           >
             {roomData.checkPrice}
           </Btn>
