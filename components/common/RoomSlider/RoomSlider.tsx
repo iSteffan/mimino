@@ -58,7 +58,7 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="px-[15px] flex justify-between w-full absolute top-[50%] z-30">
+      <div className="container flex justify-between w-full absolute top-[50%] z-30 left-1/2 transform -translate-x-1/2 xl:top-[412px]">
         <button
           type="button"
           onClick={() => swiperRef.current?.slidePrev()}

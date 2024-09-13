@@ -15,21 +15,32 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
         <ContactAddress isHero classnameDivProps="ml-auto flex md:relative md:h-[56px] md:top-0" />
       </div>
 
-      <div className="container absolute top-[483px] leading-normal left-1/2 z-40 transform -translate-x-1/2">
+      <div className="container absolute top-[483px] leading-normal left-1/2 z-40 transform -translate-x-1/2 xl:top-[574px]">
         <h2
           className="mb-[14px] max-w-[345px] text-white font-times text-[28px] font-700 tracking-[1.4px] 
          md:text-[36px] md:max-w-[510px] md:tracking-[1.8px]"
         >
           {room.title}
         </h2>
-        <p
-          className="mb-[16px] max-w-[345px] text-white font-mont text-[12px] font-700 tracking-[0.24px] 
-        md:text-[16px] md:max-w-[400px] md:tracking-[0.32px]"
-        >
-          {room.desc.title}
-        </p>
 
-        <div className="flex items-center max-w-[345px] md:max-w-full">
+        <div className="mb-[16px] w-full flex justify-between items-center xl:mb-0">
+          <p
+            className="max-w-[345px] text-white font-mont text-[12px] font-700 tracking-[0.24px] 
+        md:text-[16px] md:max-w-[400px] md:tracking-[0.32px]"
+          >
+            {room.desc.title}
+          </p>
+          <Btn
+            isBtn
+            type="button"
+            classnameProps="hidden h-[54px] py-[12px] ml-auto border-white rounded-[25px] border-[2px] 
+            md:py-[14px] xl:block"
+          >
+            {roomData.checkPrice}
+          </Btn>
+        </div>
+
+        <div className="flex items-center max-w-[345px] md:max-w-full xl:hidden">
           <ContactAddress
             isRoomHero
             classnameDivProps="hidden md:block w-[285px]"
