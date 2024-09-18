@@ -1,13 +1,23 @@
+'use client';
+import { useState } from 'react';
+
 import { RoomSlider } from '@/components/common/RoomSlider';
 import { Btn } from '@/components/common/Btn';
 import { ContactAddress } from '@/components/common/ContactAddress';
 import { Socials } from '@/components/common/Socials';
+import { Modal } from '@/components/ui/Modal';
 
 import roomData from '@/data/room.json';
 
 import { IRoomSection } from '../type';
 
 export const RoomHeroSection = ({ room }: IRoomSection) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="max-w-full mx-auto mt-[-64px] md:mt-[-104px]">
       <RoomSlider data={room.slider} classnameProps="relative" />
@@ -55,6 +65,12 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
             {roomData.checkPrice}
           </Btn>
         </div>
+
+        <button type="button" onClick={() => handleToggleModal()}>
+          Modal
+        </button>
+
+        <Modal open={isModalOpen} onClose={handleToggleModal}></Modal>
       </div>
     </div>
   );
