@@ -1,45 +1,40 @@
 'use client';
 
-import { Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { IModal } from './type';
 
 export const Modal = ({ open, onClose }: IModal) => {
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" />
-        </Transition.Child>
+    <Dialog open={open} onClose={onClose} className="relative z-40">
+      <DialogBackdrop
+        transition
+        className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+      />
 
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            >
-              <Dialog.Panel
-                className="relative py-[32px] px-[24px] max-w-[456px] w-full h-auto rounded-[8px] bg-white
-              md:max-w-[540px] xl:p-[36px] xl:max-w-[800px] border-[0.5px] border-solid border-[#AAB8DD]"
-              ></Dialog.Panel>
-            </Transition.Child>
-          </div>
+      <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <DialogPanel
+            transition
+            className="relative transform overflow-hidden bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+          >
+            <div className="bg-white px-[15px] py-[60px] sm:p-6 sm:pb-4">
+              <div className="sm:flex sm:items-start">
+                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <DialogTitle as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                    Deactivate account
+                  </DialogTitle>
+                  <div className="mt-2">
+                    <p className="text-sm text-gray-500">
+                      Are you sure you want to deactivate your account? All of your data will be
+                      permanently removed. This action cannot be undone.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </DialogPanel>
         </div>
-      </Dialog>
-    </Transition.Root>
+      </div>
+    </Dialog>
   );
 };

@@ -33,14 +33,6 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
     },
     slidesPerView: 1,
     spaceBetween: 20,
-
-    // breakpoints: {
-    //   1024: {
-    //
-
-    //   1280: {
-    //   },
-    // },
   };
 
   return (
