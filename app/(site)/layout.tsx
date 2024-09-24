@@ -63,7 +63,7 @@ export default function RootLayout({
           timesNewRoman.variable,
           montserrat.variable,
           filmP3.variable,
-          'flex h-full min-h-screen flex-col bg-white'
+          'flex h-full min-h-screen flex-col bg-white relative'
         )}
       >
         <Header />
