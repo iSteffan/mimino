@@ -6,6 +6,8 @@ import CloseIcon from '@/public/icons/close-x.svg';
 
 import { IModal } from './type';
 
+import css from './Modal.module.css';
+
 export const Modal = ({ open, onClose }: IModal) => {
   return (
     <Dialog open={open} onClose={onClose} className="relative z-40">
@@ -25,10 +27,10 @@ export const Modal = ({ open, onClose }: IModal) => {
             <div className="relative bg-white px-[15px] py-[60px] md:p-[60px]">
               <button
                 type="button"
-                className="absolute top-[16px] right-[16px] w-[24px] h-[24px]"
+                className={`absolute top-[16px] right-[16px] w-[24px] h-[24px] ${css['button']}`}
                 onClick={() => onClose()}
               >
-                <CloseIcon />
+                <CloseIcon className={css['close-icon']} />
               </button>
               text
             </div>

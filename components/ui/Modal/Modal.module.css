@@ -1,0 +1,9 @@
+.close-icon path {
+  stroke: black;
+  transition: fill 300ms ease-out;
+}
+
+.button:hover .close-icon path,
+.button:focus .close-icon path {
+  stroke: #f3c653;
+}
