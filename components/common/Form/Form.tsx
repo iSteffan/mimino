@@ -9,7 +9,7 @@ type Inputs = {
   checkOutDate: string;
 };
 
-export const Form = ({ formType }: IForm) => {
+export const Form = ({ formType, roomType }: IForm) => {
   const {
     register,
     handleSubmit,

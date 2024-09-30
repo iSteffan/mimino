@@ -14,6 +14,7 @@ export const Btn = ({
   isLink,
   isScroll,
   linkTo,
+  onClick,
 }: IBtn) => {
   const btnStyles = classNames(
     'block border-white rounded-[25px] py-[15px] w-[236px] font-mont text-center text-accentYellow01 text-[16px] leading-normal tracking-[0.32px] font-700 hover:bg-white focus:bg-white hover:border-accentYellow01 focus:border-accentYellow01 transition-colors',
@@ -23,7 +24,7 @@ export const Btn = ({
   return (
     <>
       {isBtn && (
-        <button type={type} className={btnStyles}>
+        <button type={type} className={btnStyles} onClick={onClick}>
           {children}
         </button>
       )}

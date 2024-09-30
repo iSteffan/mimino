@@ -10,6 +10,7 @@ import { Modal } from '@/components/ui/Modal';
 import roomData from '@/data/room.json';
 
 import { IRoomSection } from '../type';
+import { Form } from '@/components/common/Form';
 
 export const RoomHeroSection = ({ room }: IRoomSection) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +22,7 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
   return (
     <div className="max-w-full mx-auto mt-[-64px] md:mt-[-104px]">
       <RoomSlider data={room.slider} classnameProps="relative" />
+
       <div className="container absolute top-[64px] left-1/2 z-40 transform -translate-x-1/2 md:hidden">
         <ContactAddress isHero classnameDivProps="ml-auto flex md:relative md:h-[56px] md:top-0" />
       </div>
@@ -40,11 +42,13 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
           >
             {room.desc.title}
           </p>
+
           <Btn
             isBtn
             type="button"
             classnameProps="hidden h-[54px] py-[12px] ml-auto border-white rounded-[25px] border-[2px] 
             md:py-[14px] xl:block"
+            onClick={() => handleToggleModal()}
           >
             {roomData.checkPrice}
           </Btn>
@@ -56,21 +60,22 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
             classnameDivProps="hidden md:block w-[285px]"
             classnameLinkProps="text-[16px] tracking-[0.16px] px-[8px]"
           />
+
           <Socials classnameProps="flex-col gap-[8px] md:flex-row md:gap-[12px] md:ml-[40px]" />
+
           <Btn
             isBtn
             type="button"
             classnameProps="h-[54px] py-[12px] ml-auto border-white rounded-[25px] border-[2px] md:py-[14px]"
+            onClick={() => handleToggleModal()}
           >
             {roomData.checkPrice}
           </Btn>
         </div>
 
-        <button type="button" onClick={() => handleToggleModal()}>
-          Modal
-        </button>
-
-        <Modal open={isModalOpen} onClose={handleToggleModal}></Modal>
+        <Modal open={isModalOpen} onClose={handleToggleModal}>
+          <Form formType="roomPrice" roomType={room.name} />
+        </Modal>
       </div>
     </div>
   );

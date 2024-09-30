@@ -8,4 +8,5 @@ export interface IBtn {
   classnameProps?: string;
   children: React.ReactNode;
   linkTo?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
