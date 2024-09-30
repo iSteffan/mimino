@@ -7,6 +7,7 @@ import CloseIcon from '@/public/icons/close-x.svg';
 import { IModal } from './type';
 
 import css from './Modal.module.css';
+import { Form } from '@/components/common/Form';
 
 export const Modal = ({ open, onClose }: IModal) => {
   return (
@@ -33,6 +34,7 @@ export const Modal = ({ open, onClose }: IModal) => {
                 <CloseIcon className={css['close-icon']} />
               </button>
               text
+              <Form />
             </div>
           </DialogPanel>
         </div>
