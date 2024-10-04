@@ -51,6 +51,10 @@
   .gradient-bg {
     @apply bg-double-gradient md:bg-triple-gradient;
   }
+
+  .form-text-yellow {
+    @apply font-mont text-[14px] tracking-[0.28px] text-accentYellow02;
+  }
 }
 
 .swiper .swiper-slide {

@@ -54,6 +54,7 @@ const config: Config = {
         textGray03: '#828282',
         textGray04: '#BABABA',
         textGray05: '#494848',
+        formGray: '#808080',
 
         adressHero: '#E5E5E5',
         heroWhite: '#FDFBEC',

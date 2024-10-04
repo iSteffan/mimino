@@ -1,4 +1,4 @@
 export interface IForm {
-  formType: 'table' | 'room' | 'roomPrice';
+  formTypeName: 'table' | 'room' | 'roomPrice';
   roomType?: string;
 }
