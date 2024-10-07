@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { IForm } from './type';
+import { getRoomData } from '@/utils/getRoomData';
 
 type Inputs = {
   name: string;
@@ -10,11 +11,12 @@ type Inputs = {
   checkOutDate: string;
 };
 
-export const Form = ({ formTypeName, roomType }: IForm) => {
+export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
@@ -24,29 +26,9 @@ export const Form = ({ formTypeName, roomType }: IForm) => {
     console.log(data);
   };
 
-  let formName;
-  let formType;
+  const { formName, formType, btnText, roomName, roomPrice } = getRoomData(formTypeName, roomType);
+  const selectedNights = watch('nights', '1');
 
-  if (formTypeName === 'table') {
-    formName = 'ЗАБРОНЮВАТИ СТОЛИК';
-    formType = 1;
-  } else if (formTypeName === 'room') {
-    formName = 'ЗАБРОНЮВАТИ НОМЕР';
-    formType = 2;
-  } else {
-    formName = 'ЦІНИ НА НОМЕР';
-    formType = 3;
-  }
-
-  let roomName;
-
-  if (roomType === 'double-room') {
-    roomName = 'Двомісний';
-  } else if (roomType === 'double-lux-room') {
-    roomName = 'Двомісний люкс';
-  } else {
-    roomName = 'Тримісний';
-  }
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="">
@@ -93,11 +75,11 @@ export const Form = ({ formTypeName, roomType }: IForm) => {
               Категорія номеру
             </p>
 
-            <label className="flex flex-col-reverse gap-[8px]">
-              <span className="form-text-yellow">Кількість ночей</span>
+            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+              <span className="ml-[15px] form-text-yellow text-left">Кількість ночей</span>
               <select
                 {...register('nights', { required: true })}
-                className="py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
+                className="py-[17px] pl-[12px] font-times text-[24px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
               >
                 {[...Array(7)].map((_, index) => (
                   <option key={index + 1} value={index + 1}>
@@ -106,11 +88,28 @@ export const Form = ({ formTypeName, roomType }: IForm) => {
                 ))}
               </select>
             </label>
+
+            <div className="mb-[8px] w-full py-[17px] pl-[12px] rounded-sm border-2 border-accentYellow02">
+              <p className="font-times text-[24px] text-left font-700 tracking-[1px] leading-normal text-formGray">
+                {roomPrice * Number(selectedNights)}
+              </p>
+            </div>
+
+            <p className="ml-[15px] form-text-yellow mb-[28px] text-left text-[16px] tracking-[0.32px]">
+              грн
+            </p>
           </>
         )}
 
-        <button className="" type="submit" onClick={() => {}}>
-          SEND
+        <button
+          className="py-[20px] bg-black w-full text-white text-[20px] rounded-sm border-1 border-accentYellow02 
+          hover:text-black hover:bg-accentYellow02 focus:text-accentYellow02 focus:bg-white transition-colors"
+          type="submit"
+          onClick={() => {
+            onClose();
+          }}
+        >
+          {btnText}
         </button>
       </form>
     </>

@@ -74,7 +74,7 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
         </div>
 
         <Modal open={isModalOpen} onClose={handleToggleModal}>
-          <Form formTypeName="roomPrice" roomType={room.name} />
+          <Form formTypeName="roomPrice" roomType={room.name} onClose={handleToggleModal} />
         </Modal>
       </div>
     </div>
