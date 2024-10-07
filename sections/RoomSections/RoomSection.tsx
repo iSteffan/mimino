@@ -1,6 +1,11 @@
+'use client';
+
 import React from 'react';
+import { useState } from 'react';
 
 import { Btn } from '@/components/common/Btn';
+import { Modal } from '@/components/ui/Modal';
+import { Form } from '@/components/common/Form';
 
 import roomData from '@/data/room.json';
 
@@ -12,6 +17,11 @@ import css from './RoomSection.module.css';
 
 export const RoomSection = ({ room }: IRoomSection) => {
   //   console.log(room);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   const { desc } = room;
 
@@ -44,6 +54,7 @@ export const RoomSection = ({ room }: IRoomSection) => {
           classnameProps="mt-[32px] py-[20px] bg-black w-full text-white text-[20px] transition-color
           hover:text-black focus:text-black hover:bg-accentYellow01 focus:bg-accentYellow01
           md:w-[434px] md:ml-auto md:mt-[40px]"
+          onClick={() => handleToggleModal()}
         >
           {roomData.reserve}
         </Btn>
@@ -60,6 +71,10 @@ export const RoomSection = ({ room }: IRoomSection) => {
           <LeftArrowIcon className={`${css['icon']} h-[24px] w-[24px]`} />
         </Btn>
       </div>
+
+      <Modal open={isModalOpen} onClose={handleToggleModal}>
+        <Form formTypeName="room" onClose={handleToggleModal} />
+      </Modal>
     </section>
   );
 };

@@ -6,7 +6,8 @@ type Inputs = {
   name: string;
   phone: string;
   date: string;
-  nights: string;
+  selectedNights: string;
+  selectedRoom: string;
   checkInDate: string;
   checkOutDate: string;
 };
@@ -24,10 +25,11 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
       e.target.reset();
     }
     console.log(data);
+    onClose();
   };
 
   const { formName, formType, btnText, roomName, roomPrice } = getRoomData(formTypeName, roomType);
-  const selectedNights = watch('nights', '1');
+  const selectedNights = watch('selectedNights', '1');
 
   return (
     <>
@@ -37,8 +39,8 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
         </h2>
         {(formType === 1 || formType === 2) && (
           <>
-            <label className="flex flex-col-reverse gap-[8px]">
-              <span className="form-text-yellow">
+            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+              <span className="ml-[15px] text-left form-text-yellow">
                 {formType === 1 && 'На кого забронювати столик?'}
                 {formType === 2 && 'На кого забронювати номер?'}
               </span>
@@ -47,20 +49,38 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 {...register('name', { required: true })}
                 placeholder="Ваше ім’я"
                 autoComplete="on"
-                className=""
+                className="py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
               />
             </label>
 
-            <label className="flex flex-col-reverse gap-[8px]">
-              <span className="form-text-yellow">Номер телефону</span>
+            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+              <span className="ml-[15px] text-left form-text-yellow">Номер телефону</span>
               <input
                 {...register('phone', {
                   required: true,
                 })}
                 placeholder="+38 (___) ___-__-__"
                 autoComplete="on"
-                className=""
+                className="py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
               />
+            </label>
+
+            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+              <span className="ml-[15px] form-text-yellow text-left">Категорія номеру</span>
+              <select
+                {...register('selectedRoom', { required: true })}
+                className="py-[17px] pl-[12px] font-times text-[24px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
+              >
+                <option key="1" value="Двомісний">
+                  Двомісний
+                </option>
+                <option key="2" value="Двомісний люкс">
+                  Двомісний люкс
+                </option>
+                <option key="3" value="Трьохмісний">
+                  Трьохмісний
+                </option>
+              </select>
             </label>
           </>
         )}
@@ -78,7 +98,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
             <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
               <span className="ml-[15px] form-text-yellow text-left">Кількість ночей</span>
               <select
-                {...register('nights', { required: true })}
+                {...register('selectedNights', { required: true })}
                 className="py-[17px] pl-[12px] font-times text-[24px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
               >
                 {[...Array(7)].map((_, index) => (
@@ -105,9 +125,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
           className="py-[20px] bg-black w-full text-white text-[20px] rounded-sm border-1 border-accentYellow02 
           hover:text-black hover:bg-accentYellow02 focus:text-accentYellow02 focus:bg-white transition-colors"
           type="submit"
-          onClick={() => {
-            onClose();
-          }}
+          onClick={() => {}}
         >
           {btnText}
         </button>
