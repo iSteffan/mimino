@@ -18,6 +18,10 @@
   .roomDescText {
     @apply font-mont font-700 text-[16px] tracking-[0.32px] text-[#7a7a7a];
   }
+
+  .input {
+    @apply py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02;
+  }
 }
 
 @layer utilities {
@@ -53,7 +57,7 @@
   }
 
   .form-text-yellow {
-    @apply font-mont text-[14px] tracking-[0.28px] text-accentYellow02;
+    @apply ml-[15px] text-left font-mont text-[14px] tracking-[0.28px] text-accentYellow02;
   }
 }
 

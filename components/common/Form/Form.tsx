@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { IForm } from './type';
+import DatePicker from 'react-datepicker';
+
 import { getRoomData } from '@/utils/getRoomData';
+
+import { IForm } from './type';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 type Inputs = {
   name: string;
@@ -8,8 +14,8 @@ type Inputs = {
   date: string;
   selectedNights: string;
   selectedRoom: string;
-  checkInDate: string;
-  checkOutDate: string;
+  checkInDate: Date;
+  checkOutDate: Date;
 };
 
 export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
@@ -18,7 +24,21 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
     handleSubmit,
     formState: { errors },
     watch,
+    setValue,
   } = useForm<Inputs>();
+
+  const [checkInDate, setCheckInDate] = useState<Date | null>(null);
+  const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
+
+  const handleCheckInDateChange = (date: Date | null) => {
+    setCheckInDate(date);
+    setValue('checkInDate', date as Date); // Оновлюємо значення в formState
+  };
+
+  const handleCheckOutDateChange = (date: Date | null) => {
+    setCheckOutDate(date);
+    setValue('checkOutDate', date as Date); // Оновлюємо значення в formState
+  };
 
   const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
     if (e) {
@@ -29,6 +49,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
   };
 
   const { formName, formType, btnText, roomName, roomPrice } = getRoomData(formTypeName, roomType);
+
   const selectedNights = watch('selectedNights', '1');
 
   return (
@@ -40,7 +61,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
         {(formType === 1 || formType === 2) && (
           <>
             <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
-              <span className="ml-[15px] text-left form-text-yellow">
+              <span className="form-text-yellow">
                 {formType === 1 && 'На кого забронювати столик?'}
                 {formType === 2 && 'На кого забронювати номер?'}
               </span>
@@ -49,28 +70,25 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 {...register('name', { required: true })}
                 placeholder="Ваше ім’я"
                 autoComplete="on"
-                className="py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
+                className="input"
               />
             </label>
 
             <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
-              <span className="ml-[15px] text-left form-text-yellow">Номер телефону</span>
+              <span className="form-text-yellow">Номер телефону</span>
               <input
                 {...register('phone', {
                   required: true,
                 })}
                 placeholder="+38 (___) ___-__-__"
                 autoComplete="on"
-                className="py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
+                className="input"
               />
             </label>
 
             <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
-              <span className="ml-[15px] form-text-yellow text-left">Категорія номеру</span>
-              <select
-                {...register('selectedRoom', { required: true })}
-                className="py-[17px] pl-[12px] font-times text-[24px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
-              >
+              <span className="form-text-yellow">Категорія номеру</span>
+              <select {...register('selectedRoom', { required: true })} className="input">
                 <option key="1" value="Двомісний">
                   Двомісний
                 </option>
@@ -82,6 +100,30 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 </option>
               </select>
             </label>
+
+            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+              <span className="form-text-yellow">Дата заїзду</span>
+              <DatePicker
+                selected={checkInDate}
+                onChange={handleCheckInDateChange}
+                placeholderText="Оберіть дату"
+                dateFormat="dd/MM/yyyy"
+                className="input w-full"
+              />
+              {errors.checkInDate && <p className="text-red-500">{errors.checkInDate.message}</p>}
+            </label>
+
+            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+              <span className="form-text-yellow">Дата виїзду</span>
+              <DatePicker
+                selected={checkOutDate}
+                onChange={handleCheckOutDateChange}
+                placeholderText="Оберіть дату"
+                dateFormat="dd/MM/yyyy"
+                className="input w-full"
+              />
+              {errors.checkOutDate && <p className="text-red-500">{errors.checkOutDate.message}</p>}
+            </label>
           </>
         )}
 
@@ -91,16 +133,13 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               {roomName}
             </h3>
 
-            <p className="form-text-yellow mb-[28px] text-left text-[16px] tracking-[0.32px]">
+            <p className="form-text-yellow ml-0 mb-[28px] text-[16px] tracking-[0.32px]">
               Категорія номеру
             </p>
 
             <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
               <span className="ml-[15px] form-text-yellow text-left">Кількість ночей</span>
-              <select
-                {...register('selectedNights', { required: true })}
-                className="py-[17px] pl-[12px] font-times text-[24px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02"
-              >
+              <select {...register('selectedNights', { required: true })} className="input">
                 {[...Array(7)].map((_, index) => (
                   <option key={index + 1} value={index + 1}>
                     {index + 1}
@@ -110,14 +149,12 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
             </label>
 
             <div className="mb-[8px] w-full py-[17px] pl-[12px] rounded-sm border-2 border-accentYellow02">
-              <p className="font-times text-[24px] text-left font-700 tracking-[1px] leading-normal text-formGray">
+              <p className="font-times text-[20px] text-left font-700 tracking-[1px] leading-normal text-formGray">
                 {roomPrice * Number(selectedNights)}
               </p>
             </div>
 
-            <p className="ml-[15px] form-text-yellow mb-[28px] text-left text-[16px] tracking-[0.32px]">
-              грн
-            </p>
+            <p className="form-text-yellow mb-[28px] text-[16px] tracking-[0.32px]">грн</p>
           </>
         )}
 
