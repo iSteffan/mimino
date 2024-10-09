@@ -30,14 +30,22 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
 
-  const handleCheckInDateChange = (date: Date | null) => {
-    setCheckInDate(date);
-    setValue('checkInDate', date as Date); // Оновлюємо значення в formState
-  };
+  // const handleCheckInDateChange = (date: Date | null) => {
+  //   setCheckInDate(date);
+  //   setValue('checkInDate', date as Date);
+  // };
 
   const handleCheckOutDateChange = (date: Date | null) => {
     setCheckOutDate(date);
-    setValue('checkOutDate', date as Date); // Оновлюємо значення в formState
+    setValue('checkOutDate', date as Date);
+  };
+
+  const handleCheckInDateChange = (date: Date | null) => {
+    setCheckInDate(date);
+    setValue('checkInDate', date as Date);
+
+    setCheckOutDate(null);
+    setValue('checkOutDate', null as unknown as Date);
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
@@ -108,6 +116,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 onChange={handleCheckInDateChange}
                 placeholderText="Оберіть дату"
                 dateFormat="dd/MM/yyyy"
+                minDate={new Date()}
                 className="input w-full"
               />
               {errors.checkInDate && <p className="text-red-500">{errors.checkInDate.message}</p>}
@@ -120,8 +129,12 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 onChange={handleCheckOutDateChange}
                 placeholderText="Оберіть дату"
                 dateFormat="dd/MM/yyyy"
+                minDate={
+                  checkInDate ? new Date(checkInDate.getTime() + 24 * 60 * 60 * 1000) : new Date()
+                }
                 className="input w-full"
               />
+
               {errors.checkOutDate && <p className="text-red-500">{errors.checkOutDate.message}</p>}
             </label>
           </>
