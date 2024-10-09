@@ -30,11 +30,6 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
 
-  // const handleCheckInDateChange = (date: Date | null) => {
-  //   setCheckInDate(date);
-  //   setValue('checkInDate', date as Date);
-  // };
-
   const handleCheckOutDateChange = (date: Date | null) => {
     setCheckOutDate(date);
     setValue('checkOutDate', date as Date);
@@ -109,8 +104,8 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               </select>
             </label>
 
-            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
-              <span className="form-text-yellow">Дата заїзду</span>
+            <label className="mb-[20px] flex flex-col-reverse justify-between">
+              <span className="mt-[8px] form-text-yellow">Дата заїзду</span>
               <DatePicker
                 selected={checkInDate}
                 onChange={handleCheckInDateChange}
@@ -119,11 +114,10 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 minDate={new Date()}
                 className="input w-full"
               />
-              {errors.checkInDate && <p className="text-red-500">{errors.checkInDate.message}</p>}
             </label>
 
-            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
-              <span className="form-text-yellow">Дата виїзду</span>
+            <label className="mb-[20px] flex flex-col-reverse justify-between">
+              <span className="mt-[8px] form-text-yellow">Дата виїзду</span>
               <DatePicker
                 selected={checkOutDate}
                 onChange={handleCheckOutDateChange}
@@ -134,8 +128,6 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 }
                 className="input w-full"
               />
-
-              {errors.checkOutDate && <p className="text-red-500">{errors.checkOutDate.message}</p>}
             </label>
           </>
         )}
