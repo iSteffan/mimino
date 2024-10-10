@@ -134,38 +134,46 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
 
         {formType === 3 && (
           <>
-            <h3 className="mb-[28px] font-times text-[24px] text-left font-700 tracking-[1.2px] text-formGray">
+            <h3
+              className="mb-[28px] font-times text-[24px] text-left font-700 tracking-[1.2px] text-formGray 
+            md:text-[32px]"
+            >
               {roomName}
             </h3>
 
-            <p className="form-text-yellow ml-0 mb-[28px] text-[16px] tracking-[0.32px]">
+            <p className="form-text-yellow ml-0 mb-[20px] text-[16px] tracking-[0.32px]">
               Категорія номеру
             </p>
 
-            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
-              <span className="ml-[15px] form-text-yellow text-left">Кількість ночей</span>
-              <select {...register('selectedNights', { required: true })} className="input">
-                {[...Array(7)].map((_, index) => (
-                  <option key={index + 1} value={index + 1}>
-                    {index + 1}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <div className="mb-[28px] flex flex-col gap-[20px] md:flex-row md:justify-between md:gap-[16px]">
+              <label className="flex flex-col-reverse gap-[8px] md:w-full">
+                <span className="ml-[15px] form-text-yellow text-left">Кількість ночей</span>
+                <select {...register('selectedNights', { required: true })} className="input">
+                  {[...Array(7)].map((_, index) => (
+                    <option key={index + 1} value={index + 1}>
+                      {index + 1}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <div className="mb-[8px] w-full py-[17px] pl-[12px] rounded-sm border-2 border-accentYellow02">
-              <p className="font-times text-[20px] text-left font-700 tracking-[1px] leading-normal text-formGray">
-                {roomPrice * Number(selectedNights)}
-              </p>
+              <div className="md:w-full">
+                <div className="mb-[8px] w-full py-[17px] pl-[12px] rounded-sm border-2 border-accentYellow02">
+                  <p className="font-times text-[20px] text-left font-700 tracking-[1px] leading-normal text-formGray">
+                    {roomPrice * Number(selectedNights)}
+                  </p>
+                </div>
+
+                <p className="form-text-yellow text-[16px] tracking-[0.32px]">грн</p>
+              </div>
             </div>
-
-            <p className="form-text-yellow mb-[28px] text-[16px] tracking-[0.32px]">грн</p>
           </>
         )}
 
         <button
-          className="py-[20px] bg-black w-full text-white text-[20px] rounded-sm border-1 border-accentYellow02 
-          hover:text-black hover:bg-accentYellow02 focus:text-accentYellow02 focus:bg-white transition-colors"
+          className="py-[20px] bg-black w-full text-white text-[20px] font-500 rounded-sm border-1 border-accentYellow02 
+          hover:text-black hover:bg-accentYellow02 focus:text-accentYellow02 focus:bg-white transition-colors
+          md:text-[24px]"
           type="submit"
           onClick={() => {}}
         >

@@ -57,7 +57,7 @@
   }
 
   .form-text-yellow {
-    @apply ml-[15px] text-left font-mont text-[14px] tracking-[0.28px] text-accentYellow02;
+    @apply ml-[15px] text-left font-mont text-[14px] tracking-[0.28px] text-accentYellow02 md:text-[16px] md:tracking-[0.32px];
   }
 }
 
