@@ -14,6 +14,7 @@ type Inputs = {
   date: string;
   selectedNights: string;
   selectedRoom: string;
+  selectedPersons: string;
   checkInDate: Date;
   checkOutDate: Date;
   reserveTableDate: Date;
@@ -69,7 +70,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
           {formName}
         </h2>
         {formType === 1 && (
-          <div className="mb-[40px] flex flex-col gap-[20px] md:grid md:grid-cols-2 md:grid-rows-3 md:gap-x-[16px]">
+          <div className="mb-[40px] flex flex-col gap-[20px] md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-[16px]">
             <label className="flex flex-col-reverse gap-[8px] md:row-start-1 md:row-span-1">
               <span className="form-text-yellow">На кого забронювати столик?</span>
 
@@ -81,7 +82,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               />
             </label>
 
-            <label className="flex flex-col-reverse gap-[8px] md:row-start-1 md:row-span-1">
+            <label className="flex flex-col-reverse gap-[8px] md:row-start-2 md:row-span-1">
               <span className="form-text-yellow">Номер телефону</span>
               <input
                 {...register('phone', {
@@ -95,10 +96,10 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
 
             <label
               className="flex flex-col-reverse gap-[8px] 
-            md:row-start-2 md:row-span-1 md:col-start-2 md:col-span-1"
+            md:row-start-1 md:row-span-1 md:col-start-2 md:col-span-1"
             >
               <span className="form-text-yellow">Столик на яку кількість осіб?</span>
-              <select {...register('selectedRoom', { required: true })} className="input">
+              <select {...register('selectedPersons', { required: true })} className="input">
                 <option key="1" value="2">
                   2
                 </option>
@@ -111,7 +112,10 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               </select>
             </label>
 
-            <label className="flex flex-col-reverse justify-between md:row-start-3 md:row-span-1">
+            <label
+              className="flex flex-col-reverse justify-between 
+            md:row-start-2 md:row-span-1 md:col-start-2 md:col-span-1"
+            >
               <span className="mt-[8px] form-text-yellow">На яку дату бронювати?</span>
               <DatePicker
                 selected={reserveTableDate}

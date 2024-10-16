@@ -5,15 +5,16 @@ import classNames from 'classnames';
 import { Modal } from '@/components/ui/Modal';
 import { Form } from '@/components/common/Form';
 import { ContactAddress } from '@/components/common/ContactAddress';
-import { BtnList } from '@/components/common/BtnList';
 import { Socials } from '@/components/common/Socials';
 
 import data from '@/data/common.json';
 
 import { IHeroSection } from './type';
+import { Btn } from '@/components/common/Btn';
 
 export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formTypeName, setFormTypeName] = useState<'table' | 'room' | 'roomPrice'>('table');
 
   const { logo, heroText, tasteLife, heroBtn } = data;
 
@@ -27,13 +28,21 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
     BtnData = heroBtn.heroMainBtns;
   } else if (isRestaurant) {
     BtnData = heroBtn.heroRestaurantBtns;
-  } else if (isHotel) {
+  } else {
     BtnData = heroBtn.heroHotelBtns;
   }
-  console.log(BtnData);
 
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleBtnClick = (type: string) => {
+    if (type === 'table' || type === 'room' || type === 'roomPrice') {
+      setFormTypeName(type);
+      handleToggleModal();
+    } else {
+      console.error(`Invalid type: ${type}`);
+    }
   };
 
   const sectionStyles = classNames(
@@ -79,18 +88,33 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
             classnameDivProps="absolute top-[-64px] right-0 flex md:relative md:h-[56px] md:top-0"
           />
 
-          <BtnList
-            BtnData={BtnData}
-            listClassnameProps="gap-[24px] md:flex-row md:gap-[40px] smOnly:mx-auto"
-            btnClassnameProps="border-white rounded-[25px] border-[2px]"
-          />
+          <div className="flex flex-col gap-[24px] md:flex-row md:gap-[40px] smOnly:mx-auto">
+            <Btn
+              {...(BtnData[0].type === 'btn'
+                ? { type: 'button', isBtn: true }
+                : { isScroll: true })}
+              classnameProps="border-white rounded-[25px] border-[2px]"
+              onClick={() => handleBtnClick('table')}
+            >
+              {BtnData[0].text}
+            </Btn>
+            <Btn
+              {...(BtnData[1].type === 'btn'
+                ? { type: 'button', isBtn: true }
+                : { isScroll: true })}
+              classnameProps="border-white rounded-[25px] border-[2px]"
+              onClick={() => handleBtnClick('room')}
+            >
+              {BtnData[1].text}
+            </Btn>
+          </div>
         </div>
 
         <Socials classnameProps="xl:hidden" />
       </div>
 
       <Modal open={isModalOpen} onClose={handleToggleModal}>
-        <Form formTypeName="table" onClose={handleToggleModal} />
+        <Form formTypeName={formTypeName} onClose={handleToggleModal} />
       </Modal>
     </section>
   );
