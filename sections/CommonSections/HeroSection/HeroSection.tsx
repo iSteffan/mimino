@@ -94,7 +94,9 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
                 ? { type: 'button', isBtn: true }
                 : { isScroll: true })}
               classnameProps="border-white rounded-[25px] border-[2px]"
-              onClick={() => handleBtnClick('table')}
+              {...(BtnData[0].formType !== 'none'
+                ? { onClick: () => handleBtnClick(BtnData[0].formType) }
+                : {})}
             >
               {BtnData[0].text}
             </Btn>
@@ -103,7 +105,9 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
                 ? { type: 'button', isBtn: true }
                 : { isScroll: true })}
               classnameProps="border-white rounded-[25px] border-[2px]"
-              onClick={() => handleBtnClick('room')}
+              {...(BtnData[1].formType !== 'none'
+                ? { onClick: () => handleBtnClick(BtnData[1].formType) }
+                : {})}
             >
               {BtnData[1].text}
             </Btn>
