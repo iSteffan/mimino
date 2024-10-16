@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 
+import { Modal } from '@/components/ui/Modal';
+import { Form } from '@/components/common/Form';
 import { ContactAddress } from '@/components/common/ContactAddress';
 import { BtnList } from '@/components/common/BtnList';
 import { Socials } from '@/components/common/Socials';
@@ -28,6 +30,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   } else if (isHotel) {
     BtnData = heroBtn.heroHotelBtns;
   }
+  console.log(BtnData);
 
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -85,6 +88,10 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
 
         <Socials classnameProps="xl:hidden" />
       </div>
+
+      <Modal open={isModalOpen} onClose={handleToggleModal}>
+        <Form formTypeName="table" onClose={handleToggleModal} />
+      </Modal>
     </section>
   );
 };
