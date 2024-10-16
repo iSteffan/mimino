@@ -1,5 +1,5 @@
 'use client';
-
+import { useState } from 'react';
 import classNames from 'classnames';
 
 import { ContactAddress } from '@/components/common/ContactAddress';
@@ -11,6 +11,8 @@ import data from '@/data/common.json';
 import { IHeroSection } from './type';
 
 export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { logo, heroText, tasteLife, heroBtn } = data;
 
   const heroMainDescription = heroText[0];
@@ -26,6 +28,10 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   } else if (isHotel) {
     BtnData = heroBtn.heroHotelBtns;
   }
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   const sectionStyles = classNames(
     'bg-cover bg-center mt-[-64px] pb-[20px] pt-[64px] md:mt-[-104px] md:pt-[100px] xl:pb-[64px]',
