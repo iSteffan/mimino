@@ -20,7 +20,7 @@
   }
 
   .input {
-    @apply py-[17px] pl-[12px] font-times text-[20px] font-700 tracking-[1px] text-formGray rounded-sm border-2 border-accentYellow02;
+    @apply py-[17px] pl-[12px] h-[54px] font-times text-[20px] font-700 tracking-[1px] leading-normal text-formGray rounded-sm border-2 border-accentYellow02 md:h-[64px] md:text-[24px] md:tracking-[1.2px];
   }
 }
 

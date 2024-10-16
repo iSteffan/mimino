@@ -58,12 +58,12 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="">
-        <h2 className="mb-[40px] font-times text-[24px] font-700 tracking-[1.2px] md:text-[48px] md:tracking-[2px]">
+        <h2 className="mb-[40px] font-times text-[24px] font-700 tracking-[1.2px] md:mb-]36px] md:text-[40px] md:tracking-[2px]">
           {formName}
         </h2>
         {(formType === 1 || formType === 2) && (
-          <>
-            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+          <div className="mb-[40px] flex flex-col gap-[20px] md:grid md:grid-cols-2 md:grid-rows-3 md:gap-x-[16px]">
+            <label className="flex flex-col-reverse gap-[8px] md:row-start-1 md:row-span-1">
               <span className="form-text-yellow">
                 {formType === 1 && 'На кого забронювати столик?'}
                 {formType === 2 && 'На кого забронювати номер?'}
@@ -77,7 +77,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               />
             </label>
 
-            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+            <label className="flex flex-col-reverse gap-[8px] md:row-start-1 md:row-span-1">
               <span className="form-text-yellow">Номер телефону</span>
               <input
                 {...register('phone', {
@@ -89,7 +89,10 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               />
             </label>
 
-            <label className="mb-[20px] flex flex-col-reverse gap-[8px]">
+            <label
+              className="flex flex-col-reverse gap-[8px] 
+            md:row-start-2 md:row-span-1 md:col-start-2 md:col-span-1"
+            >
               <span className="form-text-yellow">Категорія номеру</span>
               <select {...register('selectedRoom', { required: true })} className="input">
                 <option key="1" value="Двомісний">
@@ -104,7 +107,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               </select>
             </label>
 
-            <label className="mb-[20px] flex flex-col-reverse justify-between">
+            <label className="flex flex-col-reverse justify-between md:row-start-3 md:row-span-1">
               <span className="mt-[8px] form-text-yellow">Дата заїзду</span>
               <DatePicker
                 selected={checkInDate}
@@ -116,7 +119,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
               />
             </label>
 
-            <label className="mb-[20px] flex flex-col-reverse justify-between">
+            <label className="flex flex-col-reverse justify-between md:row-start-3 md:row-span-1">
               <span className="mt-[8px] form-text-yellow">Дата виїзду</span>
               <DatePicker
                 selected={checkOutDate}
@@ -129,7 +132,7 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 className="input w-full"
               />
             </label>
-          </>
+          </div>
         )}
 
         {formType === 3 && (
