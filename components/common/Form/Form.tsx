@@ -20,7 +20,7 @@ type Inputs = {
   reserveTableDate: Date;
 };
 
-export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
+export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm) => {
   const {
     register,
     handleSubmit,
@@ -51,12 +51,25 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
     setValue('reserveTableDate', date as Date);
   };
 
+  // const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
+  //   if (e) {
+  //     e.target.reset();
+  //   }
+  //   console.log(data);
+  //   onClose();
+  // };
+
   const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
     if (e) {
       e.target.reset();
     }
     console.log(data);
-    onClose();
+
+    if (formType === 3) {
+      setFormTypeName('room');
+    } else {
+      onClose();
+    }
   };
 
   const { formName, formType, btnText, roomName, roomPrice } = getRoomData(formTypeName, roomType);
@@ -166,8 +179,8 @@ export const Form = ({ formTypeName, roomType, onClose }: IForm) => {
                 <option key="2" value="Двомісний люкс">
                   Двомісний люкс
                 </option>
-                <option key="3" value="Трьохмісний">
-                  Трьохмісний
+                <option key="3" value="Тримісний">
+                  Тримісний
                 </option>
               </select>
             </label>

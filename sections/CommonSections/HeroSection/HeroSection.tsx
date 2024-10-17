@@ -118,7 +118,11 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
       </div>
 
       <Modal open={isModalOpen} onClose={handleToggleModal}>
-        <Form formTypeName={formTypeName} onClose={handleToggleModal} />
+        <Form
+          formTypeName={formTypeName}
+          onClose={handleToggleModal}
+          setFormTypeName={setFormTypeName}
+        />
       </Modal>
     </section>
   );
