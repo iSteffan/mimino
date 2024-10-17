@@ -58,12 +58,17 @@
   ],
   "btnData": {
     "restaurantSection": [
-      { "text": "Забронювати столик", "type": "btn", "btnType": "button" },
-      { "text": "Переглянути меню", "type": "link", "btnType": "none", "linkTo": "/restaurant" }
+      { "text": "Забронювати столик", "type": "btn", "formType": "table", "linkTo": "" },
+      { "text": "Переглянути меню", "type": "link", "formType": "none", "linkTo": "/restaurant" }
     ],
     "hotelSection": [
-      { "text": "Забронювати номер", "type": "btn", "btnType": "button" },
-      { "text": "Переглянути ціни", "type": "link", "btnType": "none", "linkTo": "/hotel" }
+      { "text": "Забронювати номер", "type": "btn", "formType": "room", "linkTo": "" },
+      {
+        "text": "Переглянути ціни",
+        "type": "btn",
+        "formType": "roomPrice",
+        "linkTo": ""
+      }
     ]
   }
 }
