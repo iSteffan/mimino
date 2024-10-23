@@ -1,5 +1,6 @@
 {
   "double": {
+    "name": "double-room",
     "desc": "Відпочинок для двох",
     "room": "ДВОМІСНИЙ НОМЕР",
     "roomDesc": "Наш затишний двомісний номер забезпечить вам комфортний відпочинок. Тут ви знайдете все необхідне для приємного перебування.",
@@ -34,11 +35,17 @@
       }
     ],
     "btnData": [
-      { "text": "Детальніше", "type": "link", "btnType": "none", "linkTo": "/hotel/double-room" },
-      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
+      { "text": "Детальніше", "type": "link", "formType": "none", "linkTo": "/hotel/double-room" },
+      {
+        "text": "Переглянути ціни",
+        "type": "btn",
+        "formType": "roomPrice",
+        "linkTo": ""
+      }
     ]
   },
   "triple": {
+    "name": "triple-room",
     "desc": "Ідеальний вибір для сімей",
     "room": "ТРИМІСНИЙ НОМЕР",
     "roomDesc": "Просторий тримісний номер ідеально підходить для сімей або невеликих компаній. Максимальний комфорт і зручності для вас.",
@@ -73,11 +80,12 @@
       }
     ],
     "btnData": [
-      { "text": "Детальніше", "type": "link", "btnType": "none", "linkTo": "/hotel/triple-room" },
-      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
+      { "text": "Детальніше", "type": "link", "formType": "none", "linkTo": "/hotel/triple-room" },
+      { "text": "Переглянути ціни", "type": "btn", "formType": "roomPrice", "linkTo": "" }
     ]
   },
   "doubleLux": {
+    "name": "double-lux-room",
     "desc": "Все для вашого особливого відпочинку",
     "room": "ДВОМІСНИЙ НОМЕР люкс",
     "roomDesc": "Розкішний двомісний номер люкс пропонує високий рівень комфорту та елегантності. Ідеальний для особливих моментів.",
@@ -115,10 +123,10 @@
       {
         "text": "Детальніше",
         "type": "link",
-        "btnType": "none",
+        "formType": "none",
         "linkTo": "/hotel/double-lux-room"
       },
-      { "text": "Переглянути ціни", "type": "btn", "btnType": "button" }
+      { "text": "Переглянути ціни", "type": "btn", "formType": "roomPrice", "linkTo": "" }
     ]
   }
 }

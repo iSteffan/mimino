@@ -1,16 +1,38 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import classNames from 'classnames';
 
 import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
 import { Slider } from '@/components/common/Slider';
 import { BtnList } from '@/components/common/BtnList';
+import { Modal } from '@/components/ui/Modal';
+import { Form } from '@/components/common/Form';
+import { Btn } from '@/components/common/Btn';
 
 import hotelData from '@/data/hotelPageData.json';
 
 import { IApartmentSection } from './type';
 
 export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartmentSection) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formTypeName, setFormTypeName] = useState<'table' | 'room' | 'roomPrice'>('roomPrice');
+
   const { double, triple, doubleLux } = hotelData;
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleBtnClick = (type: string) => {
+    if (type === 'room' || type === 'roomPrice') {
+      setFormTypeName(type);
+      handleToggleModal();
+    } else {
+      console.error(`Invalid type: ${type}`);
+    }
+  };
 
   let data;
   let section: 'hotelDouble' | 'hotelDoubleLux' | 'hotelTriple';
@@ -25,6 +47,7 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
     data = triple;
     section = 'hotelTriple';
   }
+  // console.log(data.btnData);
 
   const sectionStyles = classNames(
     'pt-[32px] pb-[32px] gradient-bg md:pt-[62px] md:pb-[40px] xl:pb-[50px]',
@@ -111,13 +134,33 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
         <div className={secondContainerStyles}>
           <Slider data={data.roomSlider} section={section} classnameProps={sliderContainerStyles} />
 
-          <BtnList
-            BtnData={data.btnData}
-            listClassnameProps="gap-[16px] mt-[20px] md:mt-[41px] xl:mt-[72px]"
-            btnClassnameProps="bg-black border-white rounded-[25px] border-[2px]"
-          />
+          <div className="flex flex-col gap-[16px] mt-[20px] md:mt-[41px] xl:mt-[72px]">
+            <Btn
+              isLink
+              linkTo={data.btnData[0].linkTo}
+              classnameProps="bg-black border-white rounded-[25px] border-[2px]"
+            >
+              {data.btnData[0].text}
+            </Btn>
+            <Btn
+              type="button"
+              isBtn
+              classnameProps="bg-black border-white rounded-[25px] border-[2px]"
+              onClick={() => handleBtnClick(data.btnData[1].formType)}
+            >
+              {data.btnData[1].text}
+            </Btn>
+          </div>
         </div>
       </div>
+      <Modal open={isModalOpen} onClose={handleToggleModal}>
+        <Form
+          formTypeName="roomPrice"
+          onClose={handleToggleModal}
+          setFormTypeName={setFormTypeName}
+          roomType={data.name}
+        />
+      </Modal>
     </section>
   );
 };

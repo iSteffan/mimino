@@ -6,11 +6,11 @@ import { Btn } from '@/components/common/Btn';
 import { ContactAddress } from '@/components/common/ContactAddress';
 import { Socials } from '@/components/common/Socials';
 import { Modal } from '@/components/ui/Modal';
+import { Form } from '@/components/common/Form';
 
 import roomData from '@/data/room.json';
 
 import { IRoomSection } from '../type';
-import { Form } from '@/components/common/Form';
 
 export const RoomHeroSection = ({ room }: IRoomSection) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

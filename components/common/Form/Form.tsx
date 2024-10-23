@@ -51,14 +51,6 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
     setValue('reserveTableDate', date as Date);
   };
 
-  // const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
-  //   if (e) {
-  //     e.target.reset();
-  //   }
-  //   console.log(data);
-  //   onClose();
-  // };
-
   const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
     if (e) {
       e.target.reset();
@@ -66,7 +58,9 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
     console.log(data);
 
     if (formType === 3) {
-      setFormTypeName('room');
+      if (setFormTypeName) {
+        setFormTypeName('room');
+      }
     } else {
       onClose();
     }
