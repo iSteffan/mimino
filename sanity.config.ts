@@ -1,6 +1,6 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import schemas from './sanity/schemas';
+import schemas from './sanity/schemaTypes';
 import { projectId, dataset, apiVersion } from '@/sanity/env';
 
 export default defineConfig({
