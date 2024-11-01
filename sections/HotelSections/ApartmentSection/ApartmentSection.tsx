@@ -6,7 +6,6 @@ import classNames from 'classnames';
 
 import { SectionTitleMimino } from '@/components/common/SectionTitleMimino';
 import { Slider } from '@/components/common/Slider';
-import { BtnList } from '@/components/common/BtnList';
 import { Modal } from '@/components/ui/Modal';
 import { Form } from '@/components/common/Form';
 import { Btn } from '@/components/common/Btn';
