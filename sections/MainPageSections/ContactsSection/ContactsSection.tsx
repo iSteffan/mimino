@@ -50,7 +50,7 @@ export const ContactsSection = () => {
               />
 
               <ContactAddress
-                classnameProps="row-start-5 row-end-6 col-start-3 col-span-1 md:row-start-9 md:row-span-1"
+                classnameDivProps="row-start-5 row-end-6 col-start-3 col-span-1 md:row-start-9 md:row-span-1"
                 isContactSection
               />
             </div>

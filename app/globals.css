@@ -22,6 +22,27 @@
   .input {
     @apply py-[17px] pl-[12px] h-[54px] font-times text-[20px] font-700 tracking-[1px] leading-normal text-formGray rounded-sm border-2 border-accentYellow02 md:h-[64px] md:text-[24px] md:tracking-[1.2px];
   }
+
+  /* ------------------------------------------------------- Menu-------------------------------------------------------*/
+  .dishes-category-title {
+    @apply mb-[16px] font-times font-700 text-[20px];
+  }
+
+  .dishes-name {
+    @apply font-mont font-500 text-[14px] tracking-[0.28px];
+  }
+
+  .dishes-ingredient {
+    @apply font-mont font-400 text-[10px] tracking-[0.2px];
+  }
+
+  .dishes-weight {
+    @apply font-mont font-300 text-[14px] tracking-[0.28px];
+  }
+
+  .dishes-price {
+    @apply font-mont font-700 text-[14px] tracking-[0.28px];
+  }
 }
 
 @layer utilities {

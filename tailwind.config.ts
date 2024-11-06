@@ -37,6 +37,7 @@ const config: Config = {
         film: ['var(--font-filmP3)'],
       },
       fontWeight: {
+        '300': '300',
         '400': '400',
         '500': '500',
         '600': '600',

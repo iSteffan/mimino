@@ -19,7 +19,7 @@ const dishes = {
           .error('Введіть назву, яка містить не більше 40 символів'),
     }),
     defineField({
-      name: 'position',
+      name: 'ingredient',
       title: 'Інгредієнти',
       description: 'Введіть інгредієнти',
       type: 'string',
