@@ -29,19 +29,19 @@
   }
 
   .dishes-name {
-    @apply font-mont font-500 text-[14px] tracking-[0.28px];
+    @apply font-mont font-500 text-[14px] tracking-[0.28px] row-start-1 row-span-1 col-start-1 col-span-1;
   }
 
   .dishes-ingredient {
-    @apply font-mont font-400 text-[10px] tracking-[0.2px];
+    @apply font-mont font-400 text-[10px] tracking-[0.2px] row-start-2 row-span-1 col-start-1 col-span-1;
   }
 
   .dishes-weight {
-    @apply font-mont font-300 text-[14px] tracking-[0.28px];
+    @apply font-mont font-300 text-[14px] tracking-[0.28px] row-start-1 row-span-2 col-start-2 col-span-1 self-center justify-self-end;
   }
 
   .dishes-price {
-    @apply font-mont font-700 text-[14px] tracking-[0.28px];
+    @apply font-mont font-700 text-[14px] tracking-[0.28px] row-start-1 row-span-2 col-start-3 col-span-1 self-center justify-self-end;
   }
 }
 
