@@ -46,6 +46,13 @@ const snacks = {
       description: 'Введіть ціну гарніру чи закуски',
       validation: rule => rule.required().error('Введіть ціну страви'),
     }),
+    defineField({
+      name: 'order',
+      title: 'Порядок',
+      type: 'number',
+      description: 'Введіть номер для сортування',
+      validation: rule => rule.integer().min(1).error('Порядок має бути числом'),
+    }),
   ],
 };
 
