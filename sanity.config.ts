@@ -1,10 +1,6 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import {
-  orderableDocumentListDeskItem,
-  orderRankField,
-  orderRankOrdering,
-} from '@sanity/orderable-document-list';
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
 import schemas from './sanity/schemaTypes';
 import { projectId, dataset, apiVersion } from '@/sanity/env';
@@ -34,6 +30,24 @@ export default defineConfig({
             orderableDocumentListDeskItem({
               type: 'snacks',
               title: 'Гарніри та закуски',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'salads',
+              title: 'Салати',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'desserts',
+              title: 'Десерти',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'drinks',
+              title: 'Напої',
               S,
               context,
             }),

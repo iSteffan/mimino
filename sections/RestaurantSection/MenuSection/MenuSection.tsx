@@ -1,11 +1,14 @@
 import { fetchDishes } from '@/sanity/requests/fetchDishes';
 import { fetchSnacks } from '@/sanity/requests/fetchSnacks';
+import { fetchSalads } from '@/sanity/requests/fetchSalads';
+import { fetchDesserts } from '@/sanity/requests/fetchDesserts';
+import { fetchDrinks } from '@/sanity/requests/fetchDrinks';
 
 import menuData from '@/data/menu.json';
 
 type Dish = {
   name: string;
-  ingredient: string;
+  ingredient?: string;
   weight: string;
   price: string;
 };
@@ -15,8 +18,11 @@ export const MenuSection = async () => {
 
   const dishesData: Dish[] = await fetchDishes();
   const snacksData: Dish[] = await fetchSnacks();
+  const saladsData: Dish[] = await fetchSalads();
+  const dessertsData: Dish[] = await fetchDesserts();
+  const drinksData: Dish[] = await fetchDrinks();
 
-  // console.log(dishesData);
+  console.log(saladsData);
 
   return (
     <section id="menu" className="bg-darkLemonBg pt-[36px] pb-[32px] gradient-bg">
@@ -52,13 +58,44 @@ export const MenuSection = async () => {
             ))}
           </div>
           <div>
-            <h3 className="dishes-title">{salad}</h3>
+            <h3 className="dishes-category-title">{salad}</h3>{' '}
+            {saladsData.map((salad, index) => (
+              <div
+                key={index}
+                className="mb-[16px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+              >
+                <h4 className="dishes-name ">{salad.name}</h4>
+                <p className="dishes-ingredient ">{salad.ingredient}</p>
+                <p className="dishes-weight ">{salad.weight}</p>
+                <p className="dishes-price ">{salad.price}</p>
+              </div>
+            ))}
           </div>
           <div>
-            <h3 className="dishes-title">{desserts}</h3>
+            <h3 className="dishes-category-title">{desserts}</h3>{' '}
+            {dessertsData.map((dessert, index) => (
+              <div
+                key={index}
+                className="mb-[11px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
+              >
+                <h4 className="dishes-name ">{dessert.name}</h4>
+                <p className="dishes-weight ">{dessert.weight}</p>
+                <p className="dishes-price ">{dessert.price}</p>
+              </div>
+            ))}
           </div>
           <div>
-            <h3 className="dishes-title">{drinks}</h3>
+            <h3 className="dishes-category-title">{drinks}</h3>{' '}
+            {drinksData.map((drink, index) => (
+              <div
+                key={index}
+                className="mb-[11px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
+              >
+                <h4 className="dishes-name ">{drink.name}</h4>
+                <p className="dishes-weight ">{drink.weight}</p>
+                <p className="dishes-price ">{drink.price}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

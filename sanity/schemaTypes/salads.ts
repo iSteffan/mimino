@@ -1,16 +1,16 @@
 import { defineField } from 'sanity';
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list';
 
-const snacks = {
-  name: 'snacks',
-  title: 'Гарніри та закуски',
+const salads = {
+  name: 'salads',
+  title: 'Салати',
   type: 'document',
-  description: 'Список гарніру чи закуски',
+  description: 'Список салатів',
   fields: [
     defineField({
       name: 'name',
-      title: 'Назва гарніру чи закуски',
-      description: 'Введіть назву гарніру чи закуски',
+      title: 'Назва салату',
+      description: 'Введіть назву салату',
       type: 'string',
       validation: rule =>
         rule
@@ -37,20 +37,20 @@ const snacks = {
       name: 'weight',
       title: 'Вага',
       type: 'string',
-      description: 'Введіть вагу гарніру чи закуски',
-      validation: rule => rule.required().error('Введіть вагу гарніру чи закуски'),
+      description: 'Введіть вагу салату',
+      validation: rule => rule.required().error('Введіть вагу салату'),
     }),
     defineField({
       name: 'price',
       title: 'Ціна',
       type: 'string',
-      description: 'Введіть ціну гарніру чи закуски',
-      validation: rule => rule.required().error('Введіть ціну гарніру чи закуски'),
+      description: 'Введіть ціну салату',
+      validation: rule => rule.required().error('Введіть ціну салату'),
     }),
 
-    orderRankField({ type: 'snacks' }),
+    orderRankField({ type: 'salads' }),
   ],
   orderings: [orderRankOrdering],
 };
 
-export default snacks;
+export default salads;
