@@ -37,7 +37,7 @@
   }
 
   .dishes-weight {
-    @apply font-mont font-300 text-[14px] tracking-[0.28px] row-start-1 row-span-2 col-start-2 col-span-1 self-center justify-self-end;
+    @apply font-mont font-300 text-[14px] tracking-[0.28px] row-start-1 row-span-2 col-start-2 col-span-1 self-center justify-self-center;
   }
 
   .dishes-price {

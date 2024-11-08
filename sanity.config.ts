@@ -1,6 +1,10 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
+import {
+  orderableDocumentListDeskItem,
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
 
 import schemas from './sanity/schemaTypes';
 import { projectId, dataset, apiVersion } from '@/sanity/env';
@@ -15,24 +19,29 @@ export default defineConfig({
 
   basePath: '/admin',
 
-  plugins: [structureTool()],
-
+  plugins: [
+    structureTool({
+      structure: (S, context) => {
+        return S.list()
+          .title('Контент')
+          .items([
+            orderableDocumentListDeskItem({
+              type: 'dishes',
+              title: 'Гарячі страви',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'snacks',
+              title: 'Гарніри та закуски',
+              S,
+              context,
+            }),
+          ]);
+      },
+    }),
+  ],
   schema: {
     types: schemas,
-  },
-  desk: {
-    structure: S =>
-      S.list()
-        .title('Контент')
-        .items([
-          orderableDocumentListDeskItem({
-            type: 'dishes',
-            title: 'Гарячі страви',
-          }),
-          orderableDocumentListDeskItem({
-            type: 'snacks',
-            title: 'Гарніри та закуски',
-          }),
-        ]),
   },
 });

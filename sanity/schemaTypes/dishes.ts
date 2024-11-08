@@ -1,4 +1,5 @@
 import { defineField } from 'sanity';
+import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list';
 
 const dishes = {
   name: 'dishes',
@@ -46,14 +47,10 @@ const dishes = {
       description: 'Введіть ціну страви',
       validation: rule => rule.required().error('Введіть ціну страви'),
     }),
-    defineField({
-      name: 'order',
-      title: 'Порядок',
-      type: 'number',
-      description: 'Введіть номер для сортування',
-      validation: rule => rule.integer().min(1).error('Порядок має бути числом'),
-    }),
+
+    orderRankField({ type: 'dishes' }),
   ],
+  orderings: [orderRankOrdering],
 };
 
 export default dishes;
