@@ -52,7 +52,7 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
   });
 
   const descriptionStyles = classNames(
-    'mb-[48px] font-mont font-600 text-textGray04 text-[12px] tracking-[0.24px] leading-normal md:mb-[40px] md:text-[16px] md:tracking-[0.32px]',
+    'mb-[48px] font-mont font-600 text-textGray04 text-[12px] tracking-[0.24px] md:mb-[40px] md:text-[16px] md:tracking-[0.32px]',
     {
       'text-left': isHotel,
     }
@@ -64,7 +64,7 @@ export const RestaurantOrHotelSection = ({ isHotel, isRestaurant }: IRestaurantO
         <div className={textContainerStyles}>
           <SectionTitleMimino classnameProps="text-white mb-[12px] md:mb-[16px]" />
 
-          <p className="mb-[20px] font-mont text-white font-700 text-[20px] leading-normal tracking-[0.4px] md:text-[24px] md:tracking-[0.48px]">
+          <p className="mb-[20px] font-mont text-white font-700 text-[20px] tracking-[0.4px] md:text-[24px] md:tracking-[0.48px]">
             {isRestaurant ? restaurant : hotel}
           </p>
 

@@ -27,7 +27,7 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
         <ContactAddress isHero classnameDivProps="ml-auto flex md:relative md:h-[56px] md:top-0" />
       </div>
 
-      <div className="container absolute top-[483px] leading-normal left-1/2 z-40 transform -translate-x-1/2 xl:top-[574px]">
+      <div className="container absolute top-[483px] left-1/2 z-40 transform -translate-x-1/2 xl:top-[574px]">
         <h2
           className="mb-[14px] max-w-[345px] text-white font-times text-[28px] font-700 tracking-[1.4px] 
          md:text-[36px] md:max-w-[510px] md:tracking-[1.8px]"

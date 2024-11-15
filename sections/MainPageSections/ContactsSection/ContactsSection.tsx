@@ -18,13 +18,13 @@ export const ContactsSection = () => {
           <div className="mb-[32px] md:mb-0">
             <SectionTitleMimino classnameProps="mb-[12px]" />
 
-            <p className="mb-[16px] font-mont text-[16px] text-textGray02 font-600 leading-normal tracking-[0.32px]">
+            <p className="mb-[16px] font-mont text-[16px] text-textGray02 font-600 tracking-[0.32px]">
               {complex}
             </p>
 
             <div className="grid grid-cols-[86px,1fr,260px] grid-rows-[40px,16px,40px,16px,76px] items-center md:grid-cols-1 md:grid-rows-[24px,8px,40px,24px,24px,8px,40px,48px,56px] md:w-[260px]">
               <p
-                className="row-start-1 row-end-2 col-start-1 col-span-1 font-mont text-[16px] leading-normal tracking-[0.32px] font-500 text-accentYellow01 
+                className="row-start-1 row-end-2 col-start-1 col-span-1 font-mont text-[16px] tracking-[0.32px] font-500 text-accentYellow01 
             md:text-[20px] md:tracking-[0.4px] md:row-start-1 md:row-span-1]"
               >
                 {headerLink[0].text}
@@ -37,7 +37,7 @@ export const ContactsSection = () => {
               />
 
               <p
-                className="row-start-3 row-end-4 col-start-1 col-span-1 font-mont text-[16px] leading-normal tracking-[0.32px] font-500 text-accentYellow01 
+                className="row-start-3 row-end-4 col-start-1 col-span-1 font-mont text-[16px] tracking-[0.32px] font-500 text-accentYellow01 
             md:text-[20px] md:tracking-[0.4px] md:row-start-5 md:row-span-1"
               >
                 {headerLink[1].text}

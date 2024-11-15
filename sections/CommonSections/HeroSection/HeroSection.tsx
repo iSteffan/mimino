@@ -55,7 +55,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
   );
 
   const descriptionStyles = classNames(
-    'font-mont text-[16px] font-600 leading-normal tracking-[0.32px] text-heroWhite text-center md:text-[20px] md:tracking-[0.4px]',
+    'font-mont text-[16px] font-600  tracking-[0.32px] text-heroWhite text-center md:text-[20px] md:tracking-[0.4px]',
     {
       'mb-[40px]': isMain || isRestaurant,
       'mb-[178px]': isHotel,
@@ -75,7 +75,7 @@ export const HeroSection = ({ isMain, isRestaurant, isHotel }: IHeroSection) => 
 
         {(isMain || isRestaurant) && (
           <p
-            className="mb-[101px] font-times text-heroWhite text-[32px] font-700 leading-normal tracking-[1.6px] text-center 
+            className="mb-[101px] font-times text-heroWhite text-[32px] font-700 tracking-[1.6px] text-center 
           md:text-[32px] md:tracking-[1.8px]"
           >
             {tasteLife}

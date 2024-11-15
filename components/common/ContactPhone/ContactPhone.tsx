@@ -6,7 +6,7 @@ import { IContactPhone } from './type';
 
 export const ContactPhone = ({ data, isContactSection, classnameProps = '' }: IContactPhone) => {
   const contactPhoneStyles = classNames(
-    'font-mont text-[14px] leading-normal tracking-[0.28px] font-400 hover:text-accentYellow01 focus:text-accentYellow01 transition-colors',
+    'font-mont text-[14px] tracking-[0.28px] font-400 hover:text-accentYellow01 focus:text-accentYellow01 transition-colors',
     {
       'text-textGray05': isContactSection,
       'text-white': !isContactSection,

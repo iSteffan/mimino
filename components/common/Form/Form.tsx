@@ -234,7 +234,7 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
 
               <div className="md:w-full">
                 <div className="mb-[8px] w-full py-[17px] pl-[12px] rounded-sm border-2 border-accentYellow02">
-                  <p className="font-times text-[20px] text-left font-700 tracking-[1px] leading-normal text-formGray">
+                  <p className="font-times text-[20px] text-left font-700 tracking-[1px] text-formGray">
                     {roomPrice * Number(selectedNights)}
                   </p>
                 </div>
