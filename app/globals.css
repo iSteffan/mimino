@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    line-height: normal;
+  }
+}
+
 @layer components {
   .heroTitleMimino {
     @apply block mx-auto w-[303px] text-center font-film text-[96px] font-700 text-white leading-normal tracking-[28.8px] md:text-[128px] md:tracking-[38.4px] md:w-[404px];
@@ -29,7 +35,7 @@
   }
 
   .dishes-name {
-    @apply font-mont font-500 text-[14px] tracking-[0.28px] row-start-1 row-span-1 col-start-1 col-span-1;
+    @apply font-mont font-500 text-[14px] tracking-[0.28px] leading-normal row-start-1 row-span-1 col-start-1 col-span-1;
   }
 
   .dishes-ingredient {

@@ -22,7 +22,7 @@ export const MenuSection = async () => {
   const dessertsData: Dish[] = await fetchDesserts();
   const drinksData: Dish[] = await fetchDrinks();
 
-  console.log(saladsData);
+  // console.log(saladsData);
 
   return (
     <section id="menu" className="bg-darkLemonBg pt-[36px] pb-[32px] gradient-bg">
@@ -31,71 +31,81 @@ export const MenuSection = async () => {
         <div>
           <div>
             <h3 className="dishes-category-title">{dishes}</h3>
-            {dishesData.map((dish, index) => (
-              <div
-                key={index}
-                className="mb-[16px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
-              >
-                <h4 className="dishes-name ">{dish.name}</h4>
-                <p className="dishes-ingredient ">{dish.ingredient}</p>
-                <p className="dishes-weight ">{dish.weight}</p>
-                <p className="dishes-price ">{dish.price}</p>
-              </div>
-            ))}
+            <div className="mb-[16px]">
+              {dishesData.map((dish, index) => (
+                <div
+                  key={index}
+                  className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+                >
+                  <h4 className="dishes-name ">{dish.name}</h4>
+                  <p className="dishes-ingredient ">{dish.ingredient}</p>
+                  <p className="dishes-weight ">{dish.weight}</p>
+                  <p className="dishes-price ">{dish.price}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div>
             <h3 className="dishes-category-title">{snacks}</h3>
-            {snacksData.map((snack, index) => (
-              <div
-                key={index}
-                className="mb-[16px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
-              >
-                <h4 className="dishes-name ">{snack.name}</h4>
-                <p className="dishes-ingredient ">{snack.ingredient}</p>
-                <p className="dishes-weight ">{snack.weight}</p>
-                <p className="dishes-price ">{snack.price}</p>
-              </div>
-            ))}
+            <div className="mb-[16px]">
+              {snacksData.map((snack, index) => (
+                <div
+                  key={index}
+                  className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+                >
+                  <h4 className="dishes-name ">{snack.name}</h4>
+                  <p className="dishes-ingredient ">{snack.ingredient}</p>
+                  <p className="dishes-weight ">{snack.weight}</p>
+                  <p className="dishes-price ">{snack.price}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div>
-            <h3 className="dishes-category-title">{salad}</h3>{' '}
-            {saladsData.map((salad, index) => (
-              <div
-                key={index}
-                className="mb-[16px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
-              >
-                <h4 className="dishes-name ">{salad.name}</h4>
-                <p className="dishes-ingredient ">{salad.ingredient}</p>
-                <p className="dishes-weight ">{salad.weight}</p>
-                <p className="dishes-price ">{salad.price}</p>
-              </div>
-            ))}
+            <h3 className="dishes-category-title">{salad}</h3>
+            <div className="mb-[16px]">
+              {saladsData.map((salad, index) => (
+                <div
+                  key={index}
+                  className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+                >
+                  <h4 className="dishes-name ">{salad.name}</h4>
+                  <p className="dishes-ingredient ">{salad.ingredient}</p>
+                  <p className="dishes-weight ">{salad.weight}</p>
+                  <p className="dishes-price ">{salad.price}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div>
-            <h3 className="dishes-category-title">{desserts}</h3>{' '}
-            {dessertsData.map((dessert, index) => (
-              <div
-                key={index}
-                className="mb-[11px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
-              >
-                <h4 className="dishes-name ">{dessert.name}</h4>
-                <p className="dishes-weight ">{dessert.weight}</p>
-                <p className="dishes-price ">{dessert.price}</p>
-              </div>
-            ))}
+            <h3 className="dishes-category-title">{desserts}</h3>
+            <div className="mb-[16px]">
+              {dessertsData.map((dessert, index) => (
+                <div
+                  key={index}
+                  className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
+                >
+                  <h4 className="dishes-name ">{dessert.name}</h4>
+                  <p className="dishes-weight ">{dessert.weight}</p>
+                  <p className="dishes-price ">{dessert.price}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div>
-            <h3 className="dishes-category-title">{drinks}</h3>{' '}
-            {drinksData.map((drink, index) => (
-              <div
-                key={index}
-                className="mb-[11px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
-              >
-                <h4 className="dishes-name ">{drink.name}</h4>
-                <p className="dishes-weight ">{drink.weight}</p>
-                <p className="dishes-price ">{drink.price}</p>
-              </div>
-            ))}
+            <h3 className="dishes-category-title">{drinks}</h3>
+            <div className="mb-[16px]">
+              {drinksData.map((drink, index) => (
+                <div
+                  key={index}
+                  className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
+                >
+                  <h4 className="dishes-name ">{drink.name}</h4>
+                  <p className="dishes-weight ">{drink.weight}</p>
+                  <p className="dishes-price ">{drink.price}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
