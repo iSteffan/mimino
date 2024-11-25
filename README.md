@@ -42,6 +42,69 @@ Here you may find a list with the most common components:
 | `isScroll`       | `boolean`           | optional, set comp as scroll        |
 | `linkTo`         | `boolean`           | optional, set link anchor           |
 
+- #### ContactAddress
+
+| Prop                 | Value     | Description                     |
+| -------------------- | --------- | ------------------------------- |
+| `isHero`             | `boolean` | optional, set specific styles   |
+| `isRoomHero`         | `boolean` | optional, set specific styles   |
+| `isContactSection`   | `boolean` | optional, set specific styles   |
+| `classnameDivProps`  | `string`  | optional, set additional styles |
+| `classnameLinkProps` | `string`  | optional, set additional styles |
+
+- #### ContactPhone
+
+| Prop               | Value                 | Description                     |
+| ------------------ | --------------------- | ------------------------------- |
+| `data`             | `string` / `string[]` | required, phone data            |
+| `classnameProps`   | `string`              | optional, set additional styles |
+| `isContactSection` | `boolean`             | optional, set specific styles   |
+
+- #### Form
+
+| Prop              | Value                          | Description                    |
+| ----------------- | ------------------------------ | ------------------------------ |
+| `formTypeName`    | `table` / `room` / `roomPrice` | required, set form type        |
+| `setFormTypeName` | `function`                     | optional, switch between forms |
+| `roomType`        | `boolean`                      | optional, set specific styles  |
+| `onClose`         | `function`                     | required, close modal window   |
+
+- #### Logo
+
+| Prop       | Value     | Description                   |
+| ---------- | --------- | ----------------------------- |
+| `isHeader` | `boolean` | optional, set specific styles |
+| `isFooter` | `boolean` | optional, set specific styles |
+
+- #### Slider
+
+| Prop             | Value      | Description                     |
+| ---------------- | ---------- | ------------------------------- |
+| `data`           | `string[]` | required, slider data           |
+| `section`        | `string`   | required, set specific styles   |
+| `classnameProps` | `string`   | optional, set additional styles |
+
+- #### RoomSlider
+
+| Prop             | Value      | Description                     |
+| ---------------- | ---------- | ------------------------------- |
+| `data`           | `string[]` | required, room data for slider  |
+| `classnameProps` | `string`   | optional, set additional styles |
+
+- #### SectionTitleMimino
+
+| Prop             | Value    | Description                     |
+| ---------------- | -------- | ------------------------------- |
+| `classnameProps` | `string` | optional, set additional styles |
+
+- #### Socials
+
+| Prop             | Value                          | Description                     |
+| ---------------- | ------------------------------ | ------------------------------- |
+| `isFooter`       | `table` / `room` / `roomPrice` | optional, set specific styles   |
+| `isHeader`       | `function`                     | optional, set specific styles   |
+| `classnameProps` | `boolean`                      | optional, set additional styles |
+
 ## Credits
 
 This software uses the following open source packages:
