@@ -59,85 +59,115 @@ export const MenuSection = () => {
     <section id="menu" className="bg-darkLemonBg pt-[36px] pb-[32px] gradient-bg">
       <div className="container">
         <h2 className="mb-[32px] font-times font-700 text-[32px]">{title}</h2>
-        <div className="mb-[32px]">
-          <div className="mb-[16px]">
-            <h3 className="dishes-category-title">{dishes}</h3>
-            {dishesData.map((dish, index) => (
-              <div
-                key={index}
-                className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
-              >
-                <h4 className="dishes-name ">{dish.name}</h4>
-                <p className="dishes-ingredient ">{dish.ingredient}</p>
-                <p className="dishes-weight ">{dish.weight}</p>
-                <p className="dishes-price ">{dish.price}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mb-[16px]">
-            <h3 className="dishes-category-title">{snacks}</h3>
-            {snacksData.map((snack, index) => (
-              <div
-                key={index}
-                className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
-              >
-                <h4 className="dishes-name ">{snack.name}</h4>
-                <p className="dishes-ingredient ">{snack.ingredient}</p>
-                <p className="dishes-weight ">{snack.weight}</p>
-                <p className="dishes-price ">{snack.price}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mb-[16px]">
-            <h3 className="dishes-category-title">{salad}</h3>
-            {saladsData.map((salad, index) => (
-              <div
-                key={index}
-                className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
-              >
-                <h4 className="dishes-name ">{salad.name}</h4>
-                <p className="dishes-ingredient ">{salad.ingredient}</p>
-                <p className="dishes-weight ">{salad.weight}</p>
-                <p className="dishes-price ">{salad.price}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mb-[16px]">
-            <h3 className="dishes-category-title">{desserts}</h3>
-            {dessertsData.map((dessert, index) => (
-              <div
-                key={index}
-                className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
-              >
-                <h4 className="dishes-name ">{dessert.name}</h4>
-                <p className="dishes-weight ">{dessert.weight}</p>
-                <p className="dishes-price ">{dessert.price}</p>
-              </div>
-            ))}
-          </div>
+        <div
+          className="mb-[32px] md:grid md:grid-cols-[repeat(auto-fit,minmax(0,411px))] md:justify-between
+        xl:grid-cols-[repeat(auto-fit,minmax(0,485px))]"
+        >
+          {/* Гарячі страви &  Гарніри та закуски*/}
 
           <div>
-            <h3 className="dishes-category-title">{drinks}</h3>
-            {drinksData.map((drink, index) => (
-              <div
-                key={index}
-                className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
-              >
-                <h4 className="dishes-name ">{drink.name}</h4>
-                <p className="dishes-weight ">{drink.weight}</p>
-                <p className="dishes-price ">{drink.price}</p>
-              </div>
-            ))}
+            <div className="mb-[16px]">
+              <h3 className="dishes-category-title">{dishes}</h3>
+              {dishesData && dishesData.length > 0 ? (
+                dishesData.map((dish, index) => (
+                  <div
+                    key={index}
+                    className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+                  >
+                    <h4 className="dishes-name">{dish.name}</h4>
+                    <p className="dishes-ingredient">{dish.ingredient}</p>
+                    <p className="dishes-weight">{dish.weight}</p>
+                    <p className="dishes-price">{dish.price}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="dishes-name">На жаль, дані наразі відсутні.</p>
+              )}
+            </div>
+
+            <div className="mb-[16px]">
+              <h3 className="dishes-category-title">{snacks}</h3>
+              {snacksData && snacksData.length > 0 ? (
+                snacksData.map((snack, index) => (
+                  <div
+                    key={index}
+                    className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+                  >
+                    <h4 className="dishes-name ">{snack.name}</h4>
+                    <p className="dishes-ingredient ">{snack.ingredient}</p>
+                    <p className="dishes-weight ">{snack.weight}</p>
+                    <p className="dishes-price ">{snack.price}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="dishes-name">На жаль, дані наразі відсутні.</p>
+              )}
+            </div>
+          </div>
+
+          {/* Салати &  Десерти & Напої*/}
+          <div>
+            <div className="mb-[16px]">
+              <h3 className="dishes-category-title">{salad}</h3>
+              {saladsData && saladsData.length > 0 ? (
+                saladsData.map((salad, index) => (
+                  <div
+                    key={index}
+                    className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto gap-y-[4px]"
+                  >
+                    <h4 className="dishes-name ">{salad.name}</h4>
+                    <p className="dishes-ingredient ">{salad.ingredient}</p>
+                    <p className="dishes-weight ">{salad.weight}</p>
+                    <p className="dishes-price ">{salad.price}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="dishes-name">На жаль, дані наразі відсутні.</p>
+              )}
+            </div>
+
+            <div className="mb-[16px]">
+              <h3 className="dishes-category-title">{desserts}</h3>
+              {dessertsData && dessertsData.length > 0 ? (
+                dessertsData.map((dessert, index) => (
+                  <div
+                    key={index}
+                    className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
+                  >
+                    <h4 className="dishes-name ">{dessert.name}</h4>
+                    <p className="dishes-weight ">{dessert.weight}</p>
+                    <p className="dishes-price ">{dessert.price}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="dishes-name">На жаль, дані наразі відсутні.</p>
+              )}
+            </div>
+
+            <div>
+              <h3 className="dishes-category-title">{drinks}</h3>
+              {drinksData && drinksData.length > 0 ? (
+                drinksData.map((drink, index) => (
+                  <div
+                    key={index}
+                    className="mb-[8px] grid grid-cols-[1fr,minmax(0,75px),minmax(0,75px)] auto-rows-auto"
+                  >
+                    <h4 className="dishes-name ">{drink.name}</h4>
+                    <p className="dishes-weight ">{drink.weight}</p>
+                    <p className="dishes-price ">{drink.price}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="dishes-name">На жаль, дані наразі відсутні.</p>
+              )}
+            </div>
           </div>
         </div>
 
         <Btn
           type="button"
           isBtn
-          classnameProps="bg-black border-white rounded-[25px] border-[2px] ml-auto mr-auto"
+          classnameProps="bg-black border-white rounded-[25px] border-[2px] m-auto md:m-0 md:ml-auto"
           onClick={handleToggleModal}
         >
           Забронювати столик
