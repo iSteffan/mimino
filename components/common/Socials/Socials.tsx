@@ -8,6 +8,8 @@ import { ISocials } from './type';
 
 import data from '@/data/common.json';
 
+import css from './Socials.module.css';
+
 export const Socials = ({ isFooter, isHeader, classnameProps = '' }: ISocials) => {
   const { socials } = data;
 
@@ -28,9 +30,11 @@ export const Socials = ({ isFooter, isHeader, classnameProps = '' }: ISocials) =
     }
   );
 
-  const linkClassName = classNames({
+  const linkClassName = classNames(css.link, {
     'md:flex md:gap-[17px]': isFooter,
   });
+
+  const IconClassName = classNames('h-[24px] w-[24px]', css.icon);
 
   return (
     <ul className={listClassName}>
@@ -44,9 +48,9 @@ export const Socials = ({ isFooter, isHeader, classnameProps = '' }: ISocials) =
             className={linkClassName}
           >
             {isFooter && <p className="hidden md:block">{link.name}</p>}
-            {link.name === 'Instagram' && <Instagram className="h-[24px] w-[24px]" />}
-            {link.name === 'Facebook' && <Facebook className="h-[24px] w-[24px]" />}
-            {link.name === 'Telegram' && <Telegram className="h-[24px] w-[24px]" />}
+            {link.name === 'Instagram' && <Instagram className={IconClassName} />}
+            {link.name === 'Facebook' && <Facebook className={IconClassName} />}
+            {link.name === 'Telegram' && <Telegram className={IconClassName} />}
           </a>
         </li>
       ))}

@@ -1,0 +1,9 @@
+.icon path {
+  fill: #f3c653;
+  transition: fill 300ms ease-out;
+}
+
+.link:hover path {
+  fill: white;
+  transition: fill 0.3s ease;
+}
