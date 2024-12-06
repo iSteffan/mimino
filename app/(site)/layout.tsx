@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import classNames from 'classnames';
+import { ToastContainer } from 'react-toastify';
 
 import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -9,6 +10,7 @@ import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
 import '../globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const montserrat = Montserrat({
   subsets: ['cyrillic', 'latin'],
@@ -66,6 +68,7 @@ export default function RootLayout({
           'flex h-full min-h-screen flex-col bg-white relative'
         )}
       >
+        <ToastContainer />
         <Header />
         <main>{children}</main>
         <Footer />

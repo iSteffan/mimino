@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import DatePicker from 'react-datepicker';
+import { toast } from 'react-toastify';
 
 import { getRoomData } from '@/utils/getRoomData';
 
@@ -62,7 +63,11 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
         setFormTypeName('room');
       }
     } else {
-      onClose();
+      toast.success('Дякуємо. Ваші дані надіслано.');
+
+      if (onClose) {
+        onClose();
+      }
     }
   };
 
@@ -135,7 +140,6 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
             </label>
           </div>
         )}
-
         {formType === 2 && (
           <div className="mb-[40px] flex flex-col gap-[20px] md:grid md:grid-cols-2 md:grid-rows-3 md:gap-x-[16px]">
             <label className="flex flex-col-reverse gap-[8px] md:row-start-1 md:row-span-1">
@@ -206,7 +210,6 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
             </label>
           </div>
         )}
-
         {formType === 3 && (
           <>
             <h3
