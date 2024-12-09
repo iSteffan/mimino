@@ -154,7 +154,7 @@ export const ApartmentSection = ({ isDouble, isDoubleLux, isTriple }: IApartment
       </div>
       <Modal open={isModalOpen} onClose={handleToggleModal}>
         <Form
-          formTypeName="roomPrice"
+          formTypeName={formTypeName}
           onClose={handleToggleModal}
           setFormTypeName={setFormTypeName}
           roomType={data.name}
