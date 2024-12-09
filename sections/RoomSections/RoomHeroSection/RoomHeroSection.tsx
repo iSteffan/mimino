@@ -14,9 +14,19 @@ import { IRoomSection } from '../type';
 
 export const RoomHeroSection = ({ room }: IRoomSection) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formTypeName, setFormTypeName] = useState<'table' | 'room' | 'roomPrice'>('roomPrice');
 
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleBtnClick = (type: string) => {
+    if (type === 'room' || type === 'roomPrice') {
+      setFormTypeName(type);
+      handleToggleModal();
+    } else {
+      console.error(`Invalid type: ${type}`);
+    }
   };
 
   return (
@@ -48,7 +58,7 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
             type="button"
             classnameProps="hidden h-[54px] py-[12px] ml-auto border-white rounded-[25px] border-[2px] 
             md:py-[14px] xl:block"
-            onClick={() => handleToggleModal()}
+            onClick={() => handleBtnClick('roomPrice')}
           >
             {roomData.checkPrice}
           </Btn>
@@ -67,14 +77,19 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
             isBtn
             type="button"
             classnameProps="h-[54px] py-[12px] ml-auto border-white rounded-[25px] border-[2px] md:py-[14px]"
-            onClick={() => handleToggleModal()}
+            onClick={() => handleBtnClick('roomPrice')}
           >
             {roomData.checkPrice}
           </Btn>
         </div>
 
         <Modal open={isModalOpen} onClose={handleToggleModal}>
-          <Form formTypeName="roomPrice" roomType={room.name} onClose={handleToggleModal} />
+          <Form
+            formTypeName={formTypeName}
+            roomType={room.name}
+            onClose={handleToggleModal}
+            setFormTypeName={setFormTypeName}
+          />
         </Modal>
       </div>
     </div>
