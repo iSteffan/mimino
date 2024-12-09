@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import { toast } from 'react-toastify';
 
 import { getRoomData } from '@/utils/getRoomData';
+import { sendMessage } from '@/api/telegram';
 
 import { IForm } from './type';
 
@@ -52,7 +53,7 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
     setValue('reserveTableDate', date as Date);
   };
 
-  const onSubmit: SubmitHandler<Inputs> = (data, e?) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data, e?) => {
     if (e) {
       e.target.reset();
     }
@@ -64,6 +65,9 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
       }
     } else {
       toast.success('Дякуємо. Ваші дані надіслано.');
+
+      // const message = `Ім'я: ${data.name} %0AТелефон: ${data.phone} %0A${data.email ? `Email: ${data.email}` : ''} %0A${data.message ? `Повідомлення: ${data.message}` : ''}`;
+      await sendMessage('data');
 
       if (onClose) {
         onClose();
