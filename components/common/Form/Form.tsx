@@ -66,8 +66,25 @@ export const Form = ({ formTypeName, roomType, onClose, setFormTypeName }: IForm
     } else {
       toast.success('Дякуємо. Ваші дані надіслано.');
 
-      // const message = `Ім'я: ${data.name} %0AТелефон: ${data.phone} %0A${data.email ? `Email: ${data.email}` : ''} %0A${data.message ? `Повідомлення: ${data.message}` : ''}`;
-      await sendMessage('data');
+      const fields = {
+        "Ім'я": data.name,
+        Телефон: data.phone,
+        'Дата заїзду': data.checkInDate ? data.checkInDate.toLocaleDateString() : null,
+        'Дата виїзду': data.checkOutDate ? data.checkOutDate.toLocaleDateString() : null,
+        'Кількість ночей': data.selectedNights,
+        'Категорія номеру': data.selectedRoom,
+        'Кількість осіб': data.selectedPersons,
+        'Дата бронювання столика': data.reserveTableDate
+          ? data.reserveTableDate.toLocaleDateString()
+          : null,
+      };
+
+      const filteredMessage = Object.entries(fields)
+        .filter(([_, value]) => value)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join('\n');
+
+      await sendMessage(encodeURIComponent(filteredMessage));
 
       if (onClose) {
         onClose();
