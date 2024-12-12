@@ -37,15 +37,25 @@ export const RoomSlider = ({ data, classnameProps }: IRoomSlider) => {
 
   return (
     <div className={`${classnameProps}`}>
-      <Swiper {...swiperParams} onSwiper={swiper => (swiperRef.current = swiper)}>
+      <Swiper
+        {...swiperParams}
+        onSwiper={swiper => (swiperRef.current = swiper)}
+        className="h-full"
+      >
         {data.map((card, index) => (
           <SwiperSlide key={index}>
             <Image
               src={card.img}
               alt={card.alt}
-              width={417}
+              width={1280}
               height={740}
-              style={{ height: '740px', width: '100%' }}
+              style={{
+                height: '100%',
+                width: '1280px',
+                objectFit: 'cover',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
             />
           </SwiperSlide>
         ))}
