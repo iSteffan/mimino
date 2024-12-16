@@ -7,6 +7,8 @@
 <p align="center">
   <a href="#introduction">Introduction</a> •
   <a href="#features">Features</a> •
+  <a href="#cms-sanity">CMS Sanity</a> •
+  <a href="#telegram-api">Telegram API</a> •
   <a href="#components-api">Components API</a> •
   <a href="#credits">Credits</a> •
   <a href="#getting-started">Getting started</a>
@@ -24,6 +26,20 @@ The website consists of three static pages: Main, Restaurant, and Hotel, along w
 page that displays content based on the search query. The layout is responsive and cross-browser
 compatible, with mobile starting at 360px, tablet at 1024px, and desktop at 1280px. The layout from
 360px to 480px is fluid (stretchable), and a mobile-first approach was used.
+
+## CMS Sanity
+
+Sanity is used as the CMS. Using the /admin route, the site administrator will be able to edit the
+restaurant menu content.
+
+<img width="100%" src="./public/images/readme/sanity_mimino.jpg" alt="cms page"/>
+
+## Telegram API
+
+Thanks to the use of the Telegram API, the site administrator instantly receives real-time
+notifications in the Telegram messenger as soon as a user fills out and submits any form.
+
+<img width="50%" src="./public/images/readme/mimino-telegram.jpg" alt="telegram message"/>
 
 ## Components API
 
@@ -120,6 +136,7 @@ This software uses the following open source packages:
 - [react-hook-form](https://react-hook-form.com/)
 - [svgr](https://www.npmjs.com/package/@svgr/webpack)
 - [classnames](https://www.npmjs.com/package/classnames)
+- [Telegram API](https://core.telegram.org/bots/api)
 
 ## Getting Started
 
