@@ -30,7 +30,7 @@ export const RoomHeroSection = ({ room }: IRoomSection) => {
   };
 
   return (
-    <div className="max-w-full mx-auto mt-[-64px] md:mt-[-104px]">
+    <div className="max-w-full mx-auto bg-lemonBg mt-[-64px] md:mt-[-104px]">
       <RoomSlider data={room.slider} classnameProps="relative h-[740px]" />
 
       <div className="container absolute top-[64px] left-1/2 z-40 transform -translate-x-1/2 md:hidden">

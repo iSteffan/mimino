@@ -56,7 +56,7 @@ export const ContactsSection = () => {
             </div>
           </div>
 
-          {/* <Map /> */}
+          <Map />
         </div>
       </div>
     </section>
