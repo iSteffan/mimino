@@ -9,6 +9,8 @@ import localFont from 'next/font/local';
 import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
+import meta from '@/data/meta/base.json';
+
 import '../globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -48,10 +50,26 @@ const filmP3 = localFont({
   variable: '--font-filmP3',
 });
 
-export const metadata: Metadata = {
-  title: 'Mimino',
-  description: 'Hotel website',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_URL as string;
+
+  const { title, description, manifest, keywords, twitter, openGraph, icons, robots } = meta;
+
+  return {
+    title: title,
+    description,
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: baseUrl,
+    },
+    manifest,
+    keywords,
+    twitter,
+    openGraph: { ...openGraph, url: baseUrl },
+    icons,
+    robots,
+  };
+}
 
 export default function RootLayout({
   children,

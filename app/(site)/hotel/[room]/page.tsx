@@ -1,5 +1,9 @@
+import { Metadata } from 'next';
+
 import { RoomSection } from '@/sections/RoomSections';
 import { RoomHeroSection } from '@/sections/RoomSections/RoomHeroSection';
+
+import { pageMetadata } from '@/utils/pageMetadata';
 
 import roomData from '@/data/room.json';
 
@@ -7,6 +11,11 @@ interface Props {
   params: {
     room: string;
   };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const page = params.room;
+  return pageMetadata(page);
 }
 
 export default function Page({ params }: Props) {
