@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import classNames from 'classnames';
 import { ToastContainer } from 'react-toastify';
@@ -92,6 +93,7 @@ export default function RootLayout({
         <main>
           {children}
           <Analytics />
+          <SpeedInsights />
         </main>
         <Footer />
       </body>
