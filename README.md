@@ -1,6 +1,6 @@
 # Mimino
 
-**[LIVE PAGE](https://mimino.vercel.app/)**
+**[LIVE PAGE](https://mimino-one.vercel.app/)**
 
 <img width="100%" src="./public/images/readme/readme-title.jpg" alt="main page"/>
 
