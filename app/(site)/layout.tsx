@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 
 import classNames from 'classnames';
 import { ToastContainer } from 'react-toastify';
@@ -88,7 +89,10 @@ export default function RootLayout({
       >
         <ToastContainer />
         <Header />
-        <main>{children}</main>
+        <main>
+          {children}
+          <Analytics />
+        </main>
         <Footer />
       </body>
     </html>
